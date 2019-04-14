@@ -11,11 +11,22 @@ public class PlayerMovement : MonoBehaviour
     bool facingRight;
     bool movingForward;
     bool inAir;
+    [SerializeField] private float moveSpeed;
+    float horizontalMove;
 
-    private void Start()
+
+    private void Update()
     {
-        
+        moveHorizontally();
     }
+
+    //increases x position of player by move speed whenever called
+    private void moveHorizontally()
+    {
+        horizontalMove = moveSpeed;
+        transform.position = new Vector2(this.transform.position.x + moveSpeed, transform.position.y);
+    }
+
 
 
     //Method called to make the player jump
