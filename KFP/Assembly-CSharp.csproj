@@ -63,7 +63,8 @@
     <Compile Include="Assets\FirePointRotation.cs" />
     <Compile Include="Assets\FollowPlayer.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
-    <Compile Include="Assets\PlayerShooting.cs" />
+    <Compile Include="Assets\PlayerShoot.cs" />
+    <Compile Include="Assets\ShootRaycastDetector.cs" />
     <Compile Include="Assets\UsefulMethods.cs" />
     <None Include="Assets\Journal\FirePointerRotation.txt" />
     <None Include="Assets\Journal\PlayerShoot.txt" />

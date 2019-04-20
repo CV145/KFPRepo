@@ -10,10 +10,12 @@ Game object: Firepoint
 - Works to rotate the fire point to look at where the mouse is in the world. Mouse position converted from screen space to in-game world space
 
 Script: PlayerShoot
-GameObject: KFP
-- Creates a raycast from the fire point and towards its forward vector direction (which should be where the mouse/finger is) for a fixed, variable length from inspector
+GameObject: Player
+Works with and requires: ShootRaycastDetector
+- Creates a raycast when mouse is clicked/screen touched from the fire point and towards its forward vector direction (which should be where the mouse/finger is) for a fixed, variable length from inspector. If the raycast hits something it returns a RaycastHit, which is then passed to ShootRaycastDetector. A line is also drawn and created to represent the raycast in-game
+
 
 Script: ShootRaycastDetector
-GameObject: Any object interacting with a player bullet raycast
-- Used to signify that the game object has been hit by a raycast 
+GameObject: Player
+- Has methods that take in a RaycastHit and can be called to trigger events on objects that were hit, for example reducing hits on an object or triggering a switch
 

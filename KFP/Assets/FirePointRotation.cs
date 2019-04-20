@@ -26,9 +26,9 @@ public class FirePointRotation : MonoBehaviour
     private void UpdateFirePointRotation()
     {
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        print("mouse position (world): " + mousePos);
+        //print("mouse position (world): " + mousePos);
         float angle = UsefulMethods.FindAngleBetweenPositions2D(this.transform.position, mousePos);
-        print("angle: " + angle);
+        //print("angle: " + angle);
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
