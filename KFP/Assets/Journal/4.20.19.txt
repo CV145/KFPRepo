@@ -1,0 +1,19 @@
+Goal: Clicking anywhere on screen spawns a raycast which can be used to hurt an enemy
+
+--- The Plan ---
+Invisible game object (an arrow to represent for debugging) used as "fire point". This is where the ray cast starts. It rotates to look at mouse position.
+Assets to get: 
+- Arrow
+
+Script: FirePointerRotation
+Game object: Firepoint
+- Works to rotate the fire point to look at where the mouse is in the world. Mouse position converted from screen space to in-game world space
+
+Script: PlayerShoot
+GameObject: KFP
+- Creates a raycast from the fire point and towards its forward vector direction (which should be where the mouse/finger is) for a fixed, variable length from inspector
+
+Script: ShootRaycastDetector
+GameObject: Any object interacting with a player bullet raycast
+- Used to signify that the game object has been hit by a raycast 
+

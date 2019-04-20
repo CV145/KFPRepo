@@ -1,0 +1,53 @@
+Script: FirePointerRotation
+Game object: Firepoint
+- Works to rotate the fire point to look at where the mouse is in the world 
+---
+private Camera mainCamera;
+
+
+void Start():
+- mainCamera = Camera.main;
+
+
+
+//Update method calls other methods
+void FixedUpdate() :
+- UpdateFirepointRotation
+
+
+
+//Used to update the rotation of the firepoint to look at the current mouse position in world space
+private void UpdateFirePointRotation() {
+
+var mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+
+
+}
+
+-------------------------------------
+How to find the position of the mouse and rotate an object towards it?
+
+1. Track the position of the mouse every frame
+2. Calculate the angle between the object and the mouse position. This angle makes up a right triangle in a unit circle
+ - Hypotenuse is the vector distance between the mouse's current position and the game object
+ - Camera.main.WorldToScreenPoint(transform.position) is required to make sure both the mouse and the object are in the same space (screen space) and provide an accurate angle (could it work the same way if mouse was converted to world space instead...?)
+ - Angle is the inverse tangent (tyx so y / x) which must be converted to degrees
+3. Rotate the game object with that angle
+(there are many possible methods of rotation, not just AngleAxis method)
+
+
+
+New methods:
+
+static float Mathf.Atan2(float y, float x)
+- returns an angle in radians for a tan of y/x
+
+static float Mathf.Rad2Deg
+- returns 360 / 2pi
+- multiply by an angle in radians to convert to degrees
+
+Quaternion Quaternion.AngleAxis(float angle, Vector3 axis) 
+- create a rotation that rotates around an axis by a given angle (in this case, the axis would be Vector3.forward. Figure out why by experimenting what happens with vector3.up and other axes) (z axis is a "roll", and how objects normally rotate in 2D scene editor)
+
+
