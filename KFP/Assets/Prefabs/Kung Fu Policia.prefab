@@ -411,6 +411,7 @@ MonoBehaviour:
   rayLength: 10
   line: {fileID: 1036944033}
   bulletLineDisplayTime: 0.03
+  firePointRotation: {fileID: 839639595}
 --- !u!114 &401012234
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float rayLength;
     [SerializeField] LineRenderer line;
     [SerializeField] float bulletLineDisplayTime;
+    [SerializeField] FirePointRotation firePointRotation;
     ShootRaycastDetector detector;
 
     private void Start()
@@ -32,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            firePointRotation.UpdateFirePointRotation();
             StartCoroutine(ShootRaycast());
         }
     }

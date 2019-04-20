@@ -19,17 +19,17 @@ public class FirePointRotation : MonoBehaviour
     // Update is called once per frame - calls other methods
     void Update()
     {
-        UpdateFirePointRotation();
+        //UpdateFirePointRotation();
     }
 
     //Used to update the rotation of the firepoint to look at the current mouse position in world space
-    private void UpdateFirePointRotation()
+    public void UpdateFirePointRotation()
     {
-        Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        //print("mouse position (world): " + mousePos);
-        float angle = UsefulMethods.FindAngleBetweenPositions2D(this.transform.position, mousePos);
-        //print("angle: " + angle);
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            //print("mouse position (world): " + mousePos);
+            float angle = UsefulMethods.FindAngleBetweenPositions2D(this.transform.position, mousePos);
+            //print("angle: " + angle);
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
    
