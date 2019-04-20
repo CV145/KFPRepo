@@ -337,9 +337,10 @@ GameObject:
   - component: {fileID: 6051022176925199039}
   - component: {fileID: 191133507}
   - component: {fileID: 1689987643}
+  - component: {fileID: 401012234}
   m_Layer: 0
   m_Name: Kung Fu Policia
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,4 +410,16 @@ MonoBehaviour:
   firePoint: {fileID: 839639594}
   rayLength: 10
   line: {fileID: 1036944033}
-  bulletLineDisplayTime: 0.02
+  bulletLineDisplayTime: 0.03
+--- !u!114 &401012234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819936314927243288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96fdd52d65d5074289ac7ea6d3cf63d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

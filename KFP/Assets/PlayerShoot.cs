@@ -16,6 +16,10 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float bulletLineDisplayTime;
     ShootRaycastDetector detector;
 
+    private void Start()
+    {
+        detector = GetComponent<ShootRaycastDetector>();
+    }
 
     // Update is called once per frame - only calls methods
     void Update()
@@ -40,7 +44,7 @@ public class PlayerShoot : MonoBehaviour
         {
             line.SetPosition(0, firePoint.transform.position);
             line.SetPosition(1, hit.point);
-            //detector.DetectRaycastHit(hit);
+            detector.DetectRaycastHit(hit);
         }
         else
         {
