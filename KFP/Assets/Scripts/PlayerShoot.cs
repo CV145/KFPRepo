@@ -15,11 +15,13 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] LineRenderer line;
     [SerializeField] float bulletLineDisplayTime;
     [SerializeField] FirePointRotation firePointRotation;
+    public int ammoCount;
     ShootRaycastDetector detector;
 
     private void Start()
     {
         detector = GetComponent<ShootRaycastDetector>();
+        ammoCount = 12;
         //TODO refactor this script
     }
 
@@ -32,8 +34,9 @@ public class PlayerShoot : MonoBehaviour
     //Checks if mouse clicked or not to call ShootRaycast()
     private void ShootCheck()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && ammoCount > 0)
         {
+            ammoCount -= 1;
             firePointRotation.UpdateFirePointRotation();
             StartCoroutine(ShootRaycast());
         }
