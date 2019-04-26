@@ -707,6 +707,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Journal\4.20.19.txt" />
+    <None Include="Assets\Journal\4.21.19.txt" />
     <None Include="Assets\Journal\FirePointerRotation.txt" />
     <None Include="Assets\Journal\PlayerShoot.txt" />
     <None Include="Packages\com.unity.collab-proxy\Editor\Resources\Styles\CollabHistoryCommon.uss" />
