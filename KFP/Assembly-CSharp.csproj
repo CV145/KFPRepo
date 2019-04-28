@@ -60,17 +60,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
+    <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\DestructibleObject.cs" />
-    <Compile Include="Assets\Scripts\FirePointRotation.cs" />
-    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\HudController.cs" />
     <Compile Include="Assets\Scripts\Movement\AIMovement.cs" />
+    <Compile Include="Assets\Scripts\Movement\AutoJump.cs" />
     <Compile Include="Assets\Scripts\Movement\EnemyMovement.cs" />
-    <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Movement\HorizontalMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\ZombieRushMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerShoot.cs" />
-    <Compile Include="Assets\Scripts\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\ShootRaycastDetector.cs" />
+    <Compile Include="Assets\Scripts\Player\FirePointRotation.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Player\ShootRaycastDetector.cs" />
     <Compile Include="Assets\Scripts\UsefulMethods.cs" />
     <None Include="Assets\Journal\FirePointerRotation.txt" />
     <None Include="Assets\Journal\PlayerShoot.txt" />
