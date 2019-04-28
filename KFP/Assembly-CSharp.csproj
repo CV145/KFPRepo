@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\ZombieRushMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\ShootRaycastDetector.cs" />
     <Compile Include="Assets\Scripts\UsefulMethods.cs" />
     <None Include="Assets\Journal\FirePointerRotation.txt" />

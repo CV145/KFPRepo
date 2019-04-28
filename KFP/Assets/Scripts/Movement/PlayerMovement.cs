@@ -9,9 +9,8 @@ using UnityEngine;
 public class PlayerMovement : AIMovement
 {
     bool facingRight;
-    bool movingForward;
+    [SerializeField] bool movingForward;
     bool inAir;
-    [SerializeField] private float moveSpeed;
     float horizontalMove;
 
 
@@ -23,8 +22,11 @@ public class PlayerMovement : AIMovement
     //increases x position of player by move speed whenever called
     private void moveHorizontally()
     {
-        horizontalMove = moveSpeed;
-        transform.position = new Vector2(this.transform.position.x + moveSpeed, transform.position.y);
+        if (movingForward)
+        {
+            horizontalMove = movementSpeed;
+            transform.position = new Vector2(this.transform.position.x + movementSpeed, transform.position.y);
+        }
     }
 
 

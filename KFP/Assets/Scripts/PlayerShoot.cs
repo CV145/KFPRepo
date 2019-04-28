@@ -8,6 +8,7 @@ Works with and requires: ShootRaycastDetector
 - Creates a raycast when mouse is clicked/screen touched from the fire point and towards its forward vector direction (which should be where the mouse/finger is) for a fixed, variable length from inspector. If the raycast hits something it returns a RaycastHit, which is then passed to ShootRaycastDetector. A line is also drawn and created to represent the raycast in-game*/
 
 [RequireComponent(typeof(ShootRaycastDetector))]
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] Transform firePoint;
@@ -15,14 +16,13 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] LineRenderer line;
     [SerializeField] float bulletLineDisplayTime;
     [SerializeField] FirePointRotation firePointRotation;
-    public int ammoCount;
+    PlayerStats stats;
     ShootRaycastDetector detector;
 
     private void Start()
     {
         detector = GetComponent<ShootRaycastDetector>();
-        ammoCount = 12;
-        //TODO refactor this script
+        stats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame - only calls methods
@@ -34,9 +34,9 @@ public class PlayerShoot : MonoBehaviour
     //Checks if mouse clicked or not to call ShootRaycast()
     private void ShootCheck()
     {
-        if (Input.GetMouseButtonDown(0) && ammoCount > 0)
+        if (Input.GetMouseButtonDown(0) && stats.ammoCount > 0)
         {
-            ammoCount -= 1;
+            stats.ammoCount -= 1;
             firePointRotation.UpdateFirePointRotation();
             StartCoroutine(ShootRaycast());
         }
