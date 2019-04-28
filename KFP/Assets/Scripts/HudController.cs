@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class HudController : MonoBehaviour
 {
     [SerializeField] Text ammoCountText;
-    [SerializeField] PlayerShoot pS;
+    PlayerStats stats;
+
     void Start()
     {
+        stats = FindObjectOfType<PlayerStats>(); 
         ammoCountText.text = "Ammo : 12/12";
-
     }
 
     void Update()
     {
         //Display the current ammo count every frame.
-        ammoCountText.text = "Ammo :" + " " + pS.ammoCount + "/12";
-
+        ammoCountText.text = "Ammo :" + " " + stats.ammoCount + "/12";
     }
 }
