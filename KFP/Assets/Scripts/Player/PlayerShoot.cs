@@ -40,6 +40,13 @@ public class PlayerShoot : MonoBehaviour
             firePointRotation.UpdateFirePointRotation();
             StartCoroutine(ShootRaycast());
         }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+
+            stats.ammoCount = 12;
+
+        }
     }
 
     //creates a raycast starting at the firePoint's position, going in the direction of its forward vector, and for a distance of rayLength. If that raycast hits something, a RaycastHit is sent to ShootRaycastDetector
