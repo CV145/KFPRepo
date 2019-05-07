@@ -12,11 +12,25 @@ public class CameraTimelines : MonoBehaviour
     PlayableDirector director;
     [SerializeField] List<TimelineAsset> timelines;
     Dictionary<string, TimelineAsset> timelineDictionary = new Dictionary<string, TimelineAsset>();
+    bool timelineIsActive;
+    public bool TimelineIsActive { get; }
 
     private void Start()
     {
         director = GetComponent<PlayableDirector>();
         StoreTimelinesInDictionary();
+    }
+
+    //plays a timeline by passing in its name
+    public void PlayTimeline(string timelineName)
+    {
+        director.Play(timelineDictionary[timelineName]);
+        timelineIsActive = true;
+    }
+
+    private void Update()
+    {
+        TimelineStopPlayingCheck();
     }
 
     //puts all the timelines in the dictionary - timelines are accessed using their names
@@ -28,10 +42,12 @@ public class CameraTimelines : MonoBehaviour
         }
     }
 
-    //TODO call this method somewhere and test whether timeline works or not
-    //plays a timeline by passing in its name
-    public void PlayTimeline(string timelineName)
+    //if a timeline is playing, check for when it stops playing
+    private void TimelineStopPlayingCheck()
     {
-        director.Play(timelineDictionary[timelineName]);
+        if (timelineIsActive)
+        {
+            //if (director)
+        }
     }
 }

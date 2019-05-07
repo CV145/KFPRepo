@@ -1,5 +1,0 @@
-A GlassesProstitute is a Prostitute is an Enemy is a DestructibleObject
-
-Enemy scripts do things that all enemies do, if ever necessary
-
-EnemyAttack -> ProstituteAttack -> GlassesProstitueAttack?

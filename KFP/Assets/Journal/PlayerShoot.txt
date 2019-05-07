@@ -1,6 +1,0 @@
-Script: PlayerShoot
-GameObject: KFP or any player
-- Creates a raycast from the fire point and towards its forward vector direction (which should be where the mouse/finger is) for a fixed, variable length from inspector
----
-[SerializeField] float rayLength;
-[SerializeField] Transform firePoint;

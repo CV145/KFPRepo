@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //A collection of useful methods that can be reused
-//Maybe script can be used in other projects too
-//Useful for math experimenting/making utilities and tools - maybe from stuff learned from math classes
-namespace carlos_methods
+namespace useful
 {
     public class UsefulMethods : MonoBehaviour
     {

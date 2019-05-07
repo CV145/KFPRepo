@@ -7,6 +7,12 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] Transform playerPosition;
     [SerializeField] bool focusOnPlayer;
+    CameraTimelines cameraTimelines;
+
+    private void Start()
+    {
+        cameraTimelines = GetComponent<CameraTimelines>();
+    }
 
     private void Update()
     {
