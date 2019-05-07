@@ -16,6 +16,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] LineRenderer line;
     [SerializeField] float bulletLineDisplayTime;
     [SerializeField] FirePointRotation firePointRotation;
+    [SerializeField] LayerMask shootRaycastMask;
     PlayerStats stats;
     ShootRaycastDetector detector;
 
@@ -52,7 +53,7 @@ public class PlayerShoot : MonoBehaviour
     //creates a raycast starting at the firePoint's position, going in the direction of its forward vector, and for a distance of rayLength. If that raycast hits something, a RaycastHit is sent to ShootRaycastDetector
     IEnumerator ShootRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.transform.position, firePoint.transform.right, rayLength);
+        RaycastHit2D hit = Physics2D.Raycast(firePoint.transform.position, firePoint.transform.right, rayLength, shootRaycastMask); 
         if (hit)
         {
             line.SetPosition(0, firePoint.transform.position);

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using carlos_methods;
+using useful;
 
 //Game object: Firepoint
 //Works to rotate the fire point to look at where the mouse is 
