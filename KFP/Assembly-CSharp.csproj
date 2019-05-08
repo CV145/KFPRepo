@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
-     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\Camera\FollowObject.cs" />
      <Compile Include="Assets\Scripts\DestructibleObject.cs" />
      <Compile Include="Assets\Scripts\HudController.cs" />
      <Compile Include="Assets\Scripts\Movement\AIMovement.cs" />
@@ -66,11 +66,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Player\ShootRaycastDetector.cs" />
+     <Compile Include="Assets\Scripts\TimelineTrigger.cs" />
      <Compile Include="Assets\Scripts\UsefulMethods.cs" />
-     <None Include="Assets\Journal\FirePointerRotation.txt" />
-     <None Include="Assets\Journal\PlayerShoot.txt" />
-     <None Include="Assets\Journal\4.21.19.txt" />
-     <None Include="Assets\Journal\4.20.19.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>F:/Githubs Repos/ID/KFPRepo/KFP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
