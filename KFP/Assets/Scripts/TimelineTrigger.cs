@@ -22,7 +22,6 @@ public class TimelineTrigger : MonoBehaviour
         {
             if (collision.gameObject.CompareTag(otherTag))
             {
-                print("trigger method activated");
                 cameraTimelines.PlayTimeline(timelineToActivate);
             }
         }
