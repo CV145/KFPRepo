@@ -12,6 +12,6 @@ public abstract class AIMovement : MonoBehaviour
     [SerializeField] protected bool move;
     public bool Move
     {
-        get; set;
+        get { return move; } set { move = value; }
     }
 }

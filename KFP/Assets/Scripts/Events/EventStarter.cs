@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-
 //script shows event responses in the inspector and has methods for invoking them
-public class EventStarter : MonoBehaviour
+//[System.Serializable] public class UnityEventFloat : UnityEvent<float> { }
+public abstract class EventStarter : MonoBehaviour
 {
-    [SerializeField] protected UnityEvent eventResponses;
+    [SerializeField] private UnityEvent eventResponses;
 
-    protected void InvokeResponses()
+    public void InvokeResponses()
     {
         eventResponses.Invoke();
     }
