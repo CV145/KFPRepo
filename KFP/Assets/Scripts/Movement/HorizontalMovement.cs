@@ -7,7 +7,6 @@ using UnityEngine;
 public class HorizontalMovement : AIMovement
 {
     bool facingRight;
-    [SerializeField] bool move;
     float horizontalMove;
 
     private void Update()

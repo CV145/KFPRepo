@@ -9,4 +9,9 @@ using UnityEngine;
 public abstract class AIMovement : MonoBehaviour
 {
     [SerializeField] protected float movementSpeed;
+    [SerializeField] protected bool move;
+    public bool Move
+    {
+        get; set;
+    }
 }
