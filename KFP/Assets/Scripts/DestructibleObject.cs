@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 /*
 GameObject: Any object that can be destroyed by player bullets
-- Stores a hits variable and has a TakeDamage method that, when called, reduces hits by 1. Once those hits reach 0 an event can be raised, such as spawning an explosion or playing an animation, apart from destroying the object. */
+- Stores a hits variable and has a TakeDamage method that, when called, reduces hits by 1. Once those hits reach 0 an event can be raised, such as spawning an explosion or playing an animation, apart from disabling the object. */
 
 public class DestructibleObject : MonoBehaviour
 {
@@ -16,13 +16,13 @@ public class DestructibleObject : MonoBehaviour
     public void TakeDamage()
     {
         hits--;
-        if (hits <= 0) { DestroyObject(); }
+        if (hits <= 0) { DisableObject(); }
     }
 
     //invoke events (play an animation, explode, etc) before destroying the object
-    private void DestroyObject()
+    private void DisableObject()
     {
         deathResponses.Invoke();
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -338,7 +338,6 @@ GameObject:
   - component: {fileID: 191133507}
   - component: {fileID: 1689987643}
   - component: {fileID: 401012234}
-  - component: {fileID: 1373979436}
   - component: {fileID: 1373979439}
   m_Layer: 8
   m_Name: Kung Fu Policia
@@ -428,18 +427,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96fdd52d65d5074289ac7ea6d3cf63d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1373979436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819936314927243288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 222628ae4c076574d92dbca990d4c7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1373979439

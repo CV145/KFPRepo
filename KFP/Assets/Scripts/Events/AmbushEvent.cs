@@ -6,9 +6,11 @@ using UnityEngine;
 //has methods that can be used from InvokeResponses() to create an ambush
 public class AmbushEvent : TriggerEvent
 {
+
+
     override
     public void InvokeResponses()
-    {
+    { 
 
     }
 }

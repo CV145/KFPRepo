@@ -9,7 +9,9 @@ public class CameraFocuser : MonoBehaviour
     [SerializeField] float smoothSpeed = 10f;
     [SerializeField] Vector3 offset;
     [SerializeField] private bool followTarget;
+    [SerializeField] private bool applyOffset;
     GameObject player;
+    public bool ApplyOffset { set { applyOffset = value; } }
     public bool FollowTarget { set { followTarget = value; } }
 
     private void Start()
@@ -34,6 +36,7 @@ public class CameraFocuser : MonoBehaviour
     //set player as target
     public void SetPlayerAsTarget()
     {
+        applyOffset = true;
         target = player.transform;
     }
 
@@ -53,8 +56,17 @@ public class CameraFocuser : MonoBehaviour
     //always follow the target
     private void moveToTarget()
     {
-            Vector3 desiredPosition = target.position + offset;
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime); //smoothSpeed: 0 is transform.position, 1 is desiredPosition
+        Vector3 desiredPosition;
+        if (applyOffset)
+        {
+             desiredPosition = target.position + offset;
+        }
+        else
+        {
+            desiredPosition = target.position;
+        }
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position,
+                desiredPosition, smoothSpeed * Time.deltaTime); //smoothSpeed: 0 is transform.position, 1 is desiredPosition
             transform.position = smoothedPosition;
     }
 }

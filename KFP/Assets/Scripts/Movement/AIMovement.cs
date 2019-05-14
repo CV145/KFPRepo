@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Abstract class for all computer based movement
 //Holds information and abstract methods that will be used for all AI movement, such as
 //a movement speed
-//AI movement can be used on enemies, projectiles, the player, NPCs... etc
 public abstract class AIMovement : MonoBehaviour
 {
     [SerializeField] protected float movementSpeed;
-    [SerializeField] protected bool move;
-    public bool Move
+    [SerializeField] protected bool allowMovement;
+    protected Transform selfTransform;
+    protected Vector3 selfPosition;
+    public bool AllowMovement
     {
-        get { return move; } set { move = value; }
+        get => allowMovement;
+        set => allowMovement = value; 
+    }
+
+    protected void Update()
+    {
+        selfTransform = this.gameObject.transform;
+        selfPosition = selfTransform.position;
     }
 }
