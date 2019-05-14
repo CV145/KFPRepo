@@ -9,10 +9,8 @@ public class CameraFocuser : MonoBehaviour
     [SerializeField] float smoothSpeed = 10f;
     [SerializeField] Vector3 offset;
     [SerializeField] private bool followTarget;
-    [SerializeField] float quickSetTargetTime = 1f;
     GameObject player;
     public bool FollowTarget { set { followTarget = value; } }
-    public float QuickSetTargetTime { set { quickSetTargetTime = value; } }
 
     private void Start()
     {
@@ -33,16 +31,23 @@ public class CameraFocuser : MonoBehaviour
         target = newTarget.transform;
     }
 
-    //temporarily set a target for quickSetTargetTime, then back to player
-    public void QuickSetTarget(GameObject newTarget)
+    //set player as target
+    public void SetPlayerAsTarget()
     {
-        StartCoroutine(QuickSetTargetCoroutine(newTarget));
-    }
-    IEnumerator QuickSetTargetCoroutine(GameObject newTarget)
-    {
-        target = newTarget.transform;
-        yield return new WaitForSeconds(quickSetTargetTime);
         target = player.transform;
+    }
+
+    //temporarily set a target for a specified time before invoking CameraLookEvent's onCameraFinishLooking event
+    public void QuickSetTargetEvent(GameObject newTarget, float secs, CameraLookEvent caller)
+    {
+        StartCoroutine(QuickSetTargetCoroutine(newTarget, secs, caller));
+    }
+    IEnumerator QuickSetTargetCoroutine(GameObject newTarget, float secs, CameraLookEvent caller)
+    {
+        Transform oldTarget = target;
+        target = newTarget.transform;
+        yield return new WaitForSeconds(secs);
+        caller.onCameraFinishLooking.Invoke();
     }
 
     //always follow the target
