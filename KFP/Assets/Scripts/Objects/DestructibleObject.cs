@@ -20,9 +20,9 @@ public class DestructibleObject : MonoBehaviour
     }
 
     //invoke events (play an animation, explode, etc) before destroying the object
-    private void DisableObject()
+    protected void DisableObject()
     {
         deathResponses.Invoke();
-        gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
     }
 }

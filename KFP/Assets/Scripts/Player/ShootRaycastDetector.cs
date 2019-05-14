@@ -17,9 +17,9 @@ public class ShootRaycastDetector : MonoBehaviour
         switch (tag)
         {
             case "Enemy":
-                if (collidedObjectParent.GetComponent<DestructibleObject>())
+                if (collidedObject.GetComponent<DestructibleObject>())
                 {
-                    collidedObjectParent.GetComponent<DestructibleObject>().TakeDamage();
+                    collidedObject.GetComponent<DestructibleObject>().TakeDamage();
                 }
                 break;
         }
