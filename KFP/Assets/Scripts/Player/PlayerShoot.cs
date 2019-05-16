@@ -17,6 +17,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float bulletLineDisplayTime;
     [SerializeField] FirePointRotation firePointRotation;
     [SerializeField] LayerMask shootRaycastMask;
+    [SerializeField] RaycastHit2D hit;
+    [SerializeField] GameObject bullet;
     PlayerStats stats;
     ShootRaycastDetector detector;
 
@@ -40,6 +42,7 @@ public class PlayerShoot : MonoBehaviour
             stats.ammoCount -= 1;
             firePointRotation.UpdateFirePointRotation();
             StartCoroutine(ShootRaycast());
+            SpawnBullet(5);
         }
     }
 
@@ -53,7 +56,7 @@ public class PlayerShoot : MonoBehaviour
     //creates a raycast starting at the firePoint's position, going in the direction of its forward vector, and for a distance of rayLength. If that raycast hits something, a RaycastHit is sent to ShootRaycastDetector
     IEnumerator ShootRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(firePoint.transform.position, firePoint.transform.right, rayLength, shootRaycastMask); 
+        hit = Physics2D.Raycast(firePoint.transform.position, firePoint.transform.right, rayLength, shootRaycastMask); 
         if (hit)
         {
             line.SetPosition(0, firePoint.transform.position);
@@ -69,5 +72,14 @@ public class PlayerShoot : MonoBehaviour
         line.enabled = true;
         yield return new WaitForSeconds(bulletLineDisplayTime);
         line.enabled = false;
+    }
+
+    private void SpawnBullet(float speed)
+    {
+
+            GameObject bulletTrailObject = Instantiate(bullet, firePoint.position + firePoint.right, firePointRotation.transform.rotation);
+            Destroy(bulletTrailObject, 1.5f);
+
+
     }
 }

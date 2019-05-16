@@ -472,8 +472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a942ebf65d365a458b5729e8015d476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 1873400931}
-  focusOnPlayer: 1
+  target: {fileID: 0}
+  smoothSpeed: 10
+  offset: {x: 0, y: 0, z: 0}
+  followTarget: 0
+  applyOffset: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2159,12 +2162,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1139576622}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1873400931 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6819936314927243291, guid: 9e01eb23a83f10348952988b1cb0ad87,
-    type: 3}
-  m_PrefabInstance: {fileID: 6819936315050694489}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1891792114 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7541649233647995241, guid: db2b73de50e003443817f8cd6cfc07fd,
@@ -2600,6 +2597,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689987643, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: decoBulletObject
+      value: 
+      objectReference: {fileID: 1006115601931870092, guid: 946f9ea1dac0af247bb7738ac84ab9aa,
+        type: 3}
+    - target: {fileID: 1689987643, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8565039865714588902, guid: 40c8856d950e25a4596ea78151684595,
+        type: 3}
+    - target: {fileID: 1689987643, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: SpawnTransform
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6819936314927243291, guid: 9e01eb23a83f10348952988b1cb0ad87,
         type: 3}

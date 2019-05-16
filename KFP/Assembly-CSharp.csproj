@@ -53,15 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera\CameraFocuser.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
-     <Compile Include="Assets\Scripts\Camera\FollowObject.cs" />
-     <Compile Include="Assets\Scripts\DestructibleObject.cs" />
+     <Compile Include="Assets\Scripts\Events\CameraLookEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\DefeatEnemiesEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\EventInvoker.cs" />
+     <Compile Include="Assets\Scripts\Events\SpawnEnemiesEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\TriggerEvent.cs" />
      <Compile Include="Assets\Scripts\HudController.cs" />
      <Compile Include="Assets\Scripts\Movement\AIMovement.cs" />
-     <Compile Include="Assets\Scripts\Movement\AutoJump.cs" />
      <Compile Include="Assets\Scripts\Movement\EnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Movement\HorizontalMovement.cs" />
+     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Movement\ZombieRushMovement.cs" />
+     <Compile Include="Assets\Scripts\Objects\DestructibleObject.cs" />
+     <Compile Include="Assets\Scripts\Objects\SelfDestructibleObject.cs" />
      <Compile Include="Assets\Scripts\Player\FirePointRotation.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
@@ -69,19 +74,19 @@
      <Compile Include="Assets\Scripts\TimelineTrigger.cs" />
      <Compile Include="Assets\Scripts\UsefulMethods.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>F:/Githubs Repos/ID/KFPRepo/KFP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>F:/Githubs Repos/RealKFP/KFPRepo/KFP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>F:/Githubs Repos/ID/KFPRepo/KFP/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>F:/Githubs Repos/RealKFP/KFPRepo/KFP/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>F:/Githubs Repos/ID/KFPRepo/KFP/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>F:/Githubs Repos/RealKFP/KFPRepo/KFP/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>F:/Githubs Repos/ID/KFPRepo/KFP/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>F:/Githubs Repos/RealKFP/KFPRepo/KFP/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>F:/Githubs Repos/ID/KFPRepo/KFP/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>F:/Githubs Repos/RealKFP/KFPRepo/KFP/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
