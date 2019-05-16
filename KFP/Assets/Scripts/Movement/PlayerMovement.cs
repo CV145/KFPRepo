@@ -5,7 +5,6 @@ using UnityEngine;
 //in charge of player movement 
 public class PlayerMovement : AIMovement
 {
-    [SerializeField] bool facingRight;
     Transform cameraTransform;
     [SerializeField] bool disableCameraFlipping;
     public bool DisableCameraFlipping { set => disableCameraFlipping = value; }
@@ -51,14 +50,5 @@ public class PlayerMovement : AIMovement
                 }
             }
         }
-    }
-
-    // Switch the direction the player is facing
-    void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 }

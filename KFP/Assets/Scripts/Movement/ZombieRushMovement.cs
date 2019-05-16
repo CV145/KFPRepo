@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* GameObject: Any enemy that mindlessly tries to rush at the player
- * Movement type that moves left or right forever, initially trying to rush the player
- * Enemies with this movement type should be destroyed eventually after they pass the player
- * Movement is very basic and does not account for jumping over obstacles
- */
 
+//type of enemy movement where the enemy spots the player position on awakening and tries to rush toward it
 public class ZombieRushMovement : EnemyMovement
 {
     float facingDirection;
 
-    private void Start()
+    private void OnEnable()
     {
+        print("on enable called");
         FindPlayer();
         DetermineMoveDirection();
     }
@@ -21,19 +18,35 @@ public class ZombieRushMovement : EnemyMovement
     //Setup a direction to go to based on where the player is at
     private void DetermineMoveDirection()
     {
-        if (player.transform.position.x < transform.position.x) { facingDirection = -1; }
-        else if (player.transform.position.x > transform.position.x) { facingDirection = 1; }
+        if (player.transform.position.x < transform.position.x)
+        {
+            facingDirection = -1;
+            if (facingRight)
+            {
+                Flip();
+            }
+        }
+        else if (player.transform.position.x > transform.position.x)
+        {
+            facingDirection = 1;
+            if (!facingRight)
+            {
+                Flip();
+            }
+        }
     }
 
     // Update is called once per frame - call methods only
-    void Update()
+    new void Update()
     {
+        base.Update();
         Rush();
     }
 
     //Move towards the move direction
     private void Rush()
     {
+        print("rush called");
         this.transform.position = new Vector2(
             transform.position.x + movementSpeed * facingDirection,
             transform.position.y
