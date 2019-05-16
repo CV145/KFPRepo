@@ -1,0 +1,108 @@
+{ "skeleton": { "images": "D:/Fiverr/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Layer 7", "bone": "root", "attachment": "Layer 7" },
+	{ "name": "Layer 32", "bone": "root", "attachment": "Layer 32" },
+	{ "name": "Layer 33 copy", "bone": "root", "attachment": "Layer 33 copy" },
+	{ "name": "Layer 55", "bone": "root", "attachment": "Layer 55" },
+	{ "name": "Layer 55 copy", "bone": "root", "attachment": "Layer 55 copy" },
+	{ "name": "Layer 56", "bone": "root", "attachment": "Layer 56" },
+	{ "name": "Layer 56 copy", "bone": "root", "attachment": "Layer 56 copy" },
+	{ "name": "Layer 73 copy", "bone": "root", "attachment": "Layer 73 copy" },
+	{ "name": "Layer 30", "bone": "root", "attachment": "Layer 30" },
+	{ "name": "Layer 73", "bone": "root", "attachment": "Layer 73" },
+	{ "name": "Layer 78", "bone": "root", "attachment": "Layer 78" },
+	{ "name": "Layer 76", "bone": "root", "attachment": "Layer 76" },
+	{ "name": "Layer 75", "bone": "root", "attachment": "Layer 75" },
+	{ "name": "Layer 75 copy", "bone": "root", "attachment": "Layer 75 copy" },
+	{ "name": "Layer 62", "bone": "root", "attachment": "Layer 62" },
+	{ "name": "Layer 26 copy", "bone": "root", "attachment": "Layer 26 copy" },
+	{ "name": "Layer 77", "bone": "root", "attachment": "Layer 77" },
+	{ "name": "Layer 80", "bone": "root", "attachment": "Layer 80" },
+	{ "name": "Layer 60", "bone": "root", "attachment": "Layer 60" },
+	{ "name": "tree", "bone": "root", "attachment": "tree" },
+	{ "name": "tree copy 2", "bone": "root", "attachment": "tree copy 2" },
+	{ "name": "tree copy", "bone": "root", "attachment": "tree copy" },
+	{ "name": "Layer 70", "bone": "root", "attachment": "Layer 70" },
+	{ "name": "Layer 71", "bone": "root", "attachment": "Layer 71" }
+],
+"skins": {
+	"default": {
+		"Layer 7": {
+			"Layer 7": { "x": 2551, "y": -946, "width": 5104, "height": 1894 }
+		},
+		"Layer 32": {
+			"Layer 32": { "x": 2551, "y": -946, "width": 5104, "height": 1894 }
+		},
+		"Layer 33 copy": {
+			"Layer 33 copy": { "x": 2529.5, "y": -598.5, "width": 4931, "height": 1199 }
+		},
+		"Layer 55": {
+			"Layer 55": { "x": 1663.5, "y": -615.5, "width": 3259, "height": 1167 }
+		},
+		"Layer 55 copy": {
+			"Layer 55 copy": { "x": 4028, "y": -647.5, "width": 1980, "height": 1195 }
+		},
+		"Layer 56": {
+			"Layer 56": { "x": 3374.5, "y": -323.5, "width": 3435, "height": 649 }
+		},
+		"Layer 56 copy": {
+			"Layer 56 copy": { "x": 892, "y": -258, "width": 1782, "height": 518 }
+		},
+		"Layer 73 copy": {
+			"Layer 73 copy": { "x": 2551, "y": -1352, "width": 5104, "height": 1082 }
+		},
+		"Layer 30": {
+			"Layer 30": { "x": 2551, "y": -1034, "width": 5104, "height": 1718 }
+		},
+		"Layer 73": {
+			"Layer 73": { "x": 711, "y": -1542.5, "width": 378, "height": 701 }
+		},
+		"Layer 78": {
+			"Layer 78": { "x": 2769.5, "y": -1495, "width": 351, "height": 796 }
+		},
+		"Layer 76": {
+			"Layer 76": { "x": 1501.5, "y": -1253, "width": 581, "height": 1280 }
+		},
+		"Layer 75": {
+			"Layer 75": { "x": 1004, "y": -1433, "width": 482, "height": 920 }
+		},
+		"Layer 75 copy": {
+			"Layer 75 copy": { "x": 3364, "y": -1268.5, "width": 708, "height": 1249 }
+		},
+		"Layer 62": {
+			"Layer 62": { "x": 1828.5, "y": -1636.5, "width": 27, "height": 21 }
+		},
+		"Layer 26 copy": {
+			"Layer 26 copy": { "x": 276.5, "y": -1547.5, "width": 555, "height": 691 }
+		},
+		"Layer 77": {
+			"Layer 77": { "x": 1915.5, "y": -1650, "width": 433, "height": 486 }
+		},
+		"Layer 80": {
+			"Layer 80": { "x": 4417, "y": -1507.5, "width": 1336, "height": 771 }
+		},
+		"Layer 60": {
+			"Layer 60": { "x": 2328, "y": -1448.5, "width": 500, "height": 889 }
+		},
+		"tree": {
+			"tree": { "x": 1466, "y": -1676.5, "width": 2888, "height": 433 }
+		},
+		"tree copy 2": {
+			"tree copy 2": { "x": 3566, "y": -1676.5, "width": 2888, "height": 433 }
+		},
+		"tree copy": {
+			"tree copy": { "x": 2507, "y": -1741.5, "width": 2182, "height": 303 }
+		},
+		"Layer 70": {
+			"Layer 70": { "x": 1365.5, "y": -1827.5, "width": 2063, "height": 131 }
+		},
+		"Layer 71": {
+			"Layer 71": { "x": 1277.5, "y": -1782.5, "width": 2341, "height": 221 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
