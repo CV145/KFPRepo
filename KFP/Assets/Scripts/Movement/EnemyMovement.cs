@@ -14,4 +14,9 @@ public abstract class EnemyMovement : AIMovement
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
+    new protected void Update()
+    {
+        base.Update();
+    }
 }
