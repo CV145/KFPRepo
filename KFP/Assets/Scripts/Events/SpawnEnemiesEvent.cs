@@ -6,6 +6,8 @@ using UnityEngine.Events;
 //enables all selected enemies in enemiesToEnable[]
 public class SpawnEnemiesEvent : TriggerEvent
 {
+    [Header("somewhere to enable enemies")]
+    [Header("Call InvokeResponses from")]
     [SerializeField] GameObject[] enemiesToEnable;
     [Header("What to do beside spawning enemies")]
     [SerializeField] UnityEvent spawnEvent;

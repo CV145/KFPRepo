@@ -391,6 +391,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6819936315050694489}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &397120288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397120287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1840e8d80a55a5340ae0eb961530b4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1676043211}
+  playerMovement: {fileID: 134179806}
+  playerShoot: {fileID: 998120942}
+  currentState: 0
 --- !u!61 &397120291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -802,7 +818,7 @@ GameObject:
   m_Layer: 0
   m_Name: event 1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -995,7 +1011,7 @@ GameObject:
   m_Layer: 0
   m_Name: event 2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1078,15 +1094,15 @@ MonoBehaviour:
   onAllEnemiesDefeated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 134179806}
-        m_MethodName: set_AllowMovement
-        m_Mode: 6
+      - m_Target: {fileID: 397120288}
+        m_MethodName: SetState
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: RUNNING
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 519420030}
@@ -2137,6 +2153,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 397120288}
+        m_MethodName: SetState
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SHOOTING
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1617910989
@@ -2835,7 +2862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: objectToLookAt
@@ -2872,10 +2899,10 @@ PrefabInstance:
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 134179806}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_AllowMovement
+      value: set_ApplyOffset
       objectReference: {fileID: 0}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2911,7 +2938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -2920,10 +2947,10 @@ PrefabInstance:
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 519420030}
+      objectReference: {fileID: 1588697566}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_ApplyOffset
+      value: InvokeResponses
       objectReference: {fileID: 0}
     - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2953,6 +2980,14 @@ PrefabInstance:
       propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
+      propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588697564, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
+      propertyPath: cameraLookResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6b75807cdb950e4e88b5b954c613608, type: 3}
 --- !u!1001 &6819936315050694489
@@ -2966,26 +3001,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
-        type: 3}
-      propertyPath: allowMovement
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
-        type: 3}
-      propertyPath: facingRight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
-        type: 3}
-      propertyPath: disableCameraFlipping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
-        type: 3}
-      propertyPath: movementSpeed
-      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 6819936314927243291, guid: 9e01eb23a83f10348952988b1cb0ad87,
         type: 3}
@@ -3041,6 +3056,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
+        type: 3}
+      propertyPath: allowMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
+        type: 3}
+      propertyPath: facingRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
+        type: 3}
+      propertyPath: disableCameraFlipping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 191133507, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
       propertyPath: m_Constraints

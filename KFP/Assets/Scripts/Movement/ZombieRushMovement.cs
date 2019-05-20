@@ -10,7 +10,7 @@ public class ZombieRushMovement : EnemyMovement
 
     private void OnEnable()
     {
-        print("on enable called");
+        //print("on enable called");
         FindPlayer();
         DetermineMoveDirection();
     }
@@ -46,7 +46,7 @@ public class ZombieRushMovement : EnemyMovement
     //Move towards the move direction
     private void Rush()
     {
-        print("rush called");
+        //print("rush called");
         this.transform.position = new Vector2(
             transform.position.x + movementSpeed * facingDirection,
             transform.position.y

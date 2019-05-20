@@ -19,8 +19,15 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] LayerMask shootRaycastMask;
     [SerializeField] RaycastHit2D hit;
     [SerializeField] GameObject bullet;
+    [SerializeField] protected bool allowShooting;
     PlayerStats stats;
     ShootRaycastDetector detector;
+
+    public bool AllowShooting
+    {
+        get => allowShooting;
+        set => allowShooting = value;
+    }
 
     private void Start()
     {
@@ -37,7 +44,7 @@ public class PlayerShoot : MonoBehaviour
     //Checks if mouse clicked or not to call ShootRaycast()
     private void ShootCheck()
     {
-        if (Input.GetMouseButtonDown(0) && stats.ammoCount > 0)
+        if (Input.GetMouseButtonDown(0) && stats.ammoCount > 0 && allowShooting)
         {
             stats.ammoCount -= 1;
             firePointRotation.UpdateFirePointRotation();
@@ -49,8 +56,10 @@ public class PlayerShoot : MonoBehaviour
      private void OnMouseDown()
     {
         //It's 13 because when player clicks on KFP they will shoot one bullet as they reload and would start with 11 instead of 12.
-        stats.ammoCount = 13;
-
+        if (allowShooting)
+        {
+            stats.ammoCount = 13;
+        }
     }
 
     //creates a raycast starting at the firePoint's position, going in the direction of its forward vector, and for a distance of rayLength. If that raycast hits something, a RaycastHit is sent to ShootRaycastDetector
