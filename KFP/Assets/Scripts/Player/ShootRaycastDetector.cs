@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* GameObject: Player
-- Has methods that take in a RaycastHit and can be called to trigger events on objects that were hit, for example reducing hits on an object or triggering a switch */
+//when a raycast from a player bullet hits something, this detector script determines what happens next
 
 public class ShootRaycastDetector : MonoBehaviour
 {
@@ -17,10 +16,13 @@ public class ShootRaycastDetector : MonoBehaviour
         switch (tag)
         {
             case "Enemy":
-                if (collidedObject.GetComponent<DestructibleObject>())
-                {
+                //if (collidedObject.GetComponent<DestructibleObject>())
+                //{
                     collidedObject.GetComponent<DestructibleObject>().TakeDamage();
-                }
+                //}
+                break;
+            case "BreakableObject":
+                collidedObject.GetComponent<DestructibleObject>().TakeDamage();
                 break;
         }
     }

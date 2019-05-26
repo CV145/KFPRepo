@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //enables all selected enemies in enemiesToEnable[]
-public class SpawnEnemiesEvent : TriggerEvent
+public class EnableObjectsEvent : TriggerEvent
 {
     [Header("somewhere to enable enemies")]
     [Header("Call InvokeResponses from")]
-    [SerializeField] GameObject[] enemiesToEnable;
+    [SerializeField] GameObject[] objectsToEnable;
     [Header("What to do beside spawning enemies")]
     [SerializeField] UnityEvent spawnEvent;
 
@@ -20,9 +20,9 @@ public class SpawnEnemiesEvent : TriggerEvent
 
     private void enableEnemies()
     {
-        foreach (GameObject enemy in enemiesToEnable)
+        foreach (GameObject obj in objectsToEnable)
         {
-            enemy.SetActive(true);
+            obj.SetActive(true);
         }
     }
 

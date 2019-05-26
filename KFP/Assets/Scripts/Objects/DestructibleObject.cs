@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 /*
 GameObject: Any object that can be destroyed by player bullets
-- Stores a hits variable and has a TakeDamage method that, when called, reduces hits by 1. Once those hits reach 0 an event can be raised, such as spawning an explosion or playing an animation, apart from disabling the object. */
-
+ */
+ [RequireComponent(typeof(BoxCollider2D))]
 public class DestructibleObject : MonoBehaviour
 {
     [SerializeField] int hits;

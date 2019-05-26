@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //object that destroys itself when hitting a specified tagged object
-[RequireComponent(typeof(BoxCollider2D))]
 public class SelfDestructibleObject : DestructibleObject
 {
     [SerializeField] string[] collisionObjectTags;
