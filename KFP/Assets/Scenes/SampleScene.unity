@@ -2606,11 +2606,15 @@ PrefabInstance:
     - target: {fileID: 1689987643, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 8565039865714588902, guid: 40c8856d950e25a4596ea78151684595,
+      objectReference: {fileID: 8565039865714588902, guid: 00a67e7b3a907df499365713b5dadd70,
         type: 3}
     - target: {fileID: 1689987643, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
       propertyPath: SpawnTransform
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689987643, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: allowShooting
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6819936314927243291, guid: 9e01eb23a83f10348952988b1cb0ad87,
         type: 3}
@@ -2665,6 +2669,31 @@ PrefabInstance:
     - target: {fileID: 6819936314927243291, guid: 9e01eb23a83f10348952988b1cb0ad87,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051022176925199039, guid: 9e01eb23a83f10348952988b1cb0ad87,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158019352, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158019352, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158019352, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: m_Positions.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158019352, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158019352, guid: 9e01eb23a83f10348952988b1cb0ad87, type: 3}
+      propertyPath: m_Positions.Array.data[1].y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -57,8 +57,8 @@
      <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
      <Compile Include="Assets\Scripts\Events\CameraLookEvent.cs" />
      <Compile Include="Assets\Scripts\Events\DefeatEnemiesEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\EnableObjectsEvent.cs" />
      <Compile Include="Assets\Scripts\Events\EventInvoker.cs" />
-     <Compile Include="Assets\Scripts\Events\SpawnEnemiesEvent.cs" />
      <Compile Include="Assets\Scripts\Events\TriggerEvent.cs" />
      <Compile Include="Assets\Scripts\HudController.cs" />
      <Compile Include="Assets\Scripts\Movement\AIMovement.cs" />
@@ -69,8 +69,10 @@
      <Compile Include="Assets\Scripts\Objects\SelfDestructibleObject.cs" />
      <Compile Include="Assets\Scripts\Player\FirePointRotation.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
      <Compile Include="Assets\Scripts\Player\ShootRaycastDetector.cs" />
+     <Compile Include="Assets\Scripts\StateMachine.cs" />
      <Compile Include="Assets\Scripts\TimelineTrigger.cs" />
      <Compile Include="Assets\Scripts\UsefulMethods.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
