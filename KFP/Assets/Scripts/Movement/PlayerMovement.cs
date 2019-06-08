@@ -24,7 +24,7 @@ public class PlayerMovement : AIMovement
     //increases x position by move speed whenever called
     private void moveHorizontally()
     {
-        if (allowMovement)
+        if (allowMovement && TheManager.Game.GameActive)
         {
             transform.position = new Vector2(this.transform.position.x + movementSpeed, transform.position.y);
         }

@@ -8,6 +8,8 @@ public class PlayerStateMachine : StateMachine
     [SerializeField] Animator animator;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerShoot playerShoot;
+
+    [SerializeField]
     public enum playerStates
     {
         RUNNING,
@@ -18,7 +20,10 @@ public class PlayerStateMachine : StateMachine
     {
         get => currentState;
     }
+    
+    
 
+    
     public void SetState(string stateName)
     {
         switch (stateName)
@@ -38,17 +43,38 @@ public class PlayerStateMachine : StateMachine
         switch(currentState)
         {
             case playerStates.RUNNING:
-                animator.SetBool("Running", true);
+                
+                animator.SetBool("shotIdle", false);
                 animator.SetBool("Shooting", false);
+                animator.SetBool("Running", true);
                 playerMovement.AllowMovement = true;
                 playerShoot.AllowShooting = false;
                 break;
             case playerStates.SHOOTING:
                 animator.SetBool("Running", false);
-                animator.SetBool("Shooting", true);
+                animator.SetBool("shotIdle", true);
                 playerMovement.AllowMovement = false;
                 playerShoot.AllowShooting = true;
+                playerShoot.ActiveShots = AnimatorActiveShot(playerShoot.ActiveShots);
                 break;
         }
+    }
+    private bool AnimatorActiveShot(bool ActiveShot)
+    {
+       
+        if (ActiveShot == true)
+        {
+            animator.SetBool("shotIdle", false);
+            animator.SetBool("Shooting", true);
+            return false;
+        }
+        else
+        {
+            animator.SetBool("shotIdle", true);
+            animator.SetBool("Shooting", false);
+            return false;
+        }
+
+       
     }
 }

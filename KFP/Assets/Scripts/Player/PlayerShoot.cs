@@ -20,8 +20,17 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] RaycastHit2D hit;
     [SerializeField] GameObject bullet;
     [SerializeField] protected bool allowShooting;
+    [SerializeField] protected bool activeShot;
+    [SerializeField] bool reloadAttempt;
     PlayerStats stats;
     ShootRaycastDetector detector;
+
+    public bool ActiveShots
+    {
+        get => activeShot;
+        set => activeShot = value;
+
+    }
 
     public bool AllowShooting
     {
@@ -41,26 +50,41 @@ public class PlayerShoot : MonoBehaviour
         ShootCheck();
     }
 
-    //Checks if mouse clicked or not to call ShootRaycast()
-    private void ShootCheck()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0) && stats.ammoCount > 0 && allowShooting)
+        reloadAttempt = true;
+
+        //It's 13 because when player clicks on KFP they will shoot one bullet as they reload and would start with 11 instead of 12.
+        if (TheManager.Game.GameActive && allowShooting)
         {
-            stats.ammoCount -= 1;
-            firePointRotation.UpdateFirePointRotation();
-            StartCoroutine(ShootRaycast());
-            SpawnBullet(5);
+            stats.ammoCount = 12;
         }
     }
 
-     private void OnMouseDown()
+    //Checks if mouse clicked or not to call ShootRaycast()
+    private void ShootCheck()
     {
-        //It's 13 because when player clicks on KFP they will shoot one bullet as they reload and would start with 11 instead of 12.
-        if (allowShooting)
+        if(TheManager.Game.GameActive && Input.GetMouseButtonDown(0) && stats.ammoCount > 0 && allowShooting)
         {
-            stats.ammoCount = 13;
+           
+            if (reloadAttempt == false)
+            {
+                activeShot = true;
+                stats.ammoCount -= 1;
+                firePointRotation.UpdateFirePointRotation();
+                StartCoroutine(ShootRaycast());
+                SpawnBullet(5);
+
+                
+            } else
+            {
+                reloadAttempt = false;
+            }
+         
         }
     }
+
+   
 
     //creates a raycast starting at the firePoint's position, going in the direction of its forward vector, and for a distance of rayLength. If that raycast hits something, a RaycastHit is sent to ShootRaycastDetector
     IEnumerator ShootRaycast()
@@ -68,9 +92,12 @@ public class PlayerShoot : MonoBehaviour
         hit = Physics2D.Raycast(firePoint.transform.position, firePoint.transform.right, rayLength, shootRaycastMask); 
         if (hit)
         {
+            
             line.SetPosition(0, firePoint.transform.position);
             line.SetPosition(1, hit.point);
-            detector.DetectRaycastHit(hit);
+           var hitobject =  detector.DetectRaycastHit(hit);
+            
+            
         }
         else
         {
@@ -81,6 +108,7 @@ public class PlayerShoot : MonoBehaviour
         line.enabled = true;
         yield return new WaitForSeconds(bulletLineDisplayTime);
         line.enabled = false;
+
     }
 
     private void SpawnBullet(float speed)

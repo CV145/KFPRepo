@@ -21,6 +21,7 @@ public abstract class AIMovement : MonoBehaviour
     {
         selfTransform = this.gameObject.transform;
         selfPosition = selfTransform.position;
+        
     }
 
     //switch the direction the object is facing
@@ -30,5 +31,12 @@ public abstract class AIMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    protected void Movement(bool activeState)
+    {
+        allowMovement = activeState;
+
+       
     }
 }

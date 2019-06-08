@@ -40,16 +40,20 @@ public class ZombieRushMovement : EnemyMovement
     new void Update()
     {
         base.Update();
-        Rush();
+        Rush(TheManager.Game.GameActive);
     }
 
     //Move towards the move direction
-    private void Rush()
+    private void Rush(bool GameActive)
     {
-        //print("rush called");
-        this.transform.position = new Vector2(
-            transform.position.x + movementSpeed * facingDirection,
-            transform.position.y
-            );
+        if (GameActive)
+        {
+            //print("rush called");
+            this.transform.position = new Vector2(
+                transform.position.x + movementSpeed * facingDirection,
+                transform.position.y
+                );
+        }
+        
     }
 }

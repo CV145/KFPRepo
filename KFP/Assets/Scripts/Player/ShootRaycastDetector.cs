@@ -7,7 +7,7 @@ using UnityEngine;
 public class ShootRaycastDetector : MonoBehaviour
 {
     //checks information retrieved by the raycast hit and calls methods accordingly
-    public void DetectRaycastHit(RaycastHit2D hit)
+    public GameObject DetectRaycastHit(RaycastHit2D hit)
     {
         string tag = hit.transform.gameObject.tag;
         GameObject collidedObject = hit.transform.gameObject;
@@ -25,5 +25,7 @@ public class ShootRaycastDetector : MonoBehaviour
                 collidedObject.GetComponent<DestructibleObject>().TakeDamage();
                 break;
         }
+
+        return collidedObjectParent;
     }
 }
