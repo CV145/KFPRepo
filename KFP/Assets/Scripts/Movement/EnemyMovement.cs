@@ -5,7 +5,7 @@ using UnityEngine;
 /* Abstract class for anything related to enemy movement. 
  * All enemies have a reference to the player game object
  * */
-public abstract class EnemyMovement : AIMovement
+public abstract class EnemyMovement : CharacterMovement
 {
     protected GameObject player;
 

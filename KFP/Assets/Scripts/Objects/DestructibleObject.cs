@@ -25,4 +25,11 @@ public class DestructibleObject : MonoBehaviour
         deathResponses.Invoke();
         transform.parent.gameObject.SetActive(false);
     }
+
+    //used to instantiate an object
+    public void SpawnObject(GameObject objToSpawn)
+    {
+        print("SpawnObject called");
+        Instantiate(objToSpawn, this.transform.position, Quaternion.identity);
+    }
 }

@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- GameObject: Player
-Works with and requires: ShootRaycastDetector
-- Creates a raycast when mouse is clicked/screen touched from the fire point and towards its forward vector direction (which should be where the mouse/finger is) for a fixed, variable length from inspector. If the raycast hits something it returns a RaycastHit, which is then passed to ShootRaycastDetector. A line is also drawn and created to represent the raycast in-game*/
+//PlayerShoot deals with everything shooting related
 
 [RequireComponent(typeof(ShootRaycastDetector))]
 [RequireComponent(typeof(PlayerStats))]
@@ -89,7 +86,8 @@ public class PlayerShoot : MonoBehaviour
     //creates a raycast starting at the firePoint's position, going in the direction of its forward vector, and for a distance of rayLength. If that raycast hits something, a RaycastHit is sent to ShootRaycastDetector
     IEnumerator ShootRaycast()
     {
-        hit = Physics2D.Raycast(firePoint.transform.position, firePoint.transform.right, rayLength, shootRaycastMask); 
+        Ray2D bulletRay = new Ray2D(firePoint.transform.position, firePoint.transform.right);
+        hit = Physics2D.Raycast(bulletRay.origin, bulletRay.direction, rayLength, shootRaycastMask); 
         if (hit)
         {
             

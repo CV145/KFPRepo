@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //in charge of player movement 
-public class PlayerMovement : AIMovement
+public class PlayerMovement : CharacterMovement
 {
     Transform cameraTransform;
     [SerializeField] bool disableCameraFlipping;
@@ -24,7 +24,7 @@ public class PlayerMovement : AIMovement
     //increases x position by move speed whenever called
     private void moveHorizontally()
     {
-        if (allowMovement && TheManager.Game.GameActive)
+        if (AllowMovement && TheManager.Game.GameActive)
         {
             transform.position = new Vector2(this.transform.position.x + movementSpeed, transform.position.y);
         }
