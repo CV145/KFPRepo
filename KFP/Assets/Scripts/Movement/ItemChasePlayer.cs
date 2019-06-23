@@ -48,6 +48,7 @@ public class ItemChasePlayer : AIMovement
         if (collision.gameObject.CompareTag("Player"))
         {
             onCollidePlayer.Invoke();
+            TheManager.Camera.glitch();
             Destroy(this.gameObject);
         }
     }

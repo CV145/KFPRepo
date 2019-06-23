@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GameManager))]
 [RequireComponent(typeof(UiManager))]
+[RequireComponent(typeof (CameraManager))]
 
 [System.Serializable]
 public class TheManager : MonoBehaviour
@@ -20,6 +21,12 @@ public class TheManager : MonoBehaviour
         get { return _uiManager; }
     }
 
+    private static CameraManager _cameraManager;
+    public static CameraManager Camera
+    {
+        get { return _cameraManager; }
+
+    }
     void Awake()
     {
 
@@ -27,7 +34,7 @@ public class TheManager : MonoBehaviour
 
         _uiManager = GetComponent<UiManager>();
 
-        
+        _cameraManager = GetComponent<CameraManager>();
 
         DontDestroyOnLoad(gameObject);
     }

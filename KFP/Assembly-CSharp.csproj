@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
+    <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFocuser.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
     <Compile Include="Assets\Scripts\Events\CameraLookEvent.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Assets\Scripts\Events\EnableObjectsEvent.cs" />
     <Compile Include="Assets\Scripts\Events\EventInvoker.cs" />
     <Compile Include="Assets\Scripts\Events\TriggerEvent.cs" />
+    <Compile Include="Assets\Scripts\Managers\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameStates\ActiveState.cs" />
     <Compile Include="Assets\Scripts\Managers\GameStates\coreMachine\GameStatesMachine.cs" />
@@ -76,7 +79,10 @@
     <Compile Include="Assets\Scripts\Managers\TheManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UiManager.cs" />
     <Compile Include="Assets\Scripts\Movement\AIMovement.cs" />
+    <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\Movement\EllipticalMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Movement\ItemChasePlayer.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Movement\ZombieRushMovement.cs" />
     <Compile Include="Assets\Scripts\Objects\DestructibleObject.cs" />
@@ -89,6 +95,8 @@
     <Compile Include="Assets\Scripts\StateMachine.cs" />
     <Compile Include="Assets\Scripts\TimelineTrigger.cs" />
     <Compile Include="Assets\Scripts\UsefulMethods.cs" />
+    <None Include="Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
+    <None Include="Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Vince/Desktop/unity projects/KFP/KFP/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
