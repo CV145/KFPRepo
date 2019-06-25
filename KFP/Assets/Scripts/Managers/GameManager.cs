@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         // Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false; had to remove because it caused errors when building 
     }
     //sets the timeScale at 1.0 or 0.0
     public void GameTime(bool time)
