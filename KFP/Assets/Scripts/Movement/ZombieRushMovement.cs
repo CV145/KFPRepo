@@ -16,7 +16,7 @@ public class ZombieRushMovement : EnemyMovement
     }
 
     //Setup a direction to go to based on where the player is at
-    private void DetermineMoveDirection()
+    protected void DetermineMoveDirection()
     {
         if (player.transform.position.x < transform.position.x)
         {
@@ -44,7 +44,7 @@ public class ZombieRushMovement : EnemyMovement
     }
 
     //Move towards the move direction
-    private void Rush(bool GameActive)
+    protected void Rush(bool GameActive)
     {
         if (GameActive)
         {
