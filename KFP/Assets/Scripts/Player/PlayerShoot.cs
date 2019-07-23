@@ -51,7 +51,6 @@ public class PlayerShoot : MonoBehaviour
     {
         reloadAttempt = true;
 
-        //It's 13 because when player clicks on KFP they will shoot one bullet as they reload and would start with 11 instead of 12.
         if (TheManager.Game.GameActive && allowShooting)
         {
             stats.ammoCount = 12;

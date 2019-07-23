@@ -53,6 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DonutShopDonut1.cs" />
+     <Compile Include="Assets\DonutShopDonut2.cs" />
+     <Compile Include="Assets\DonutShopScreenController.cs" />
      <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
      <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFocuser.cs" />
