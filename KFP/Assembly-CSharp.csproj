@@ -56,8 +56,10 @@
      <Compile Include="Assets\DonutShopDonut1.cs" />
      <Compile Include="Assets\DonutShopDonut2.cs" />
      <Compile Include="Assets\DonutShopScreenController.cs" />
+     <Compile Include="Assets\DonutShopSounds.cs" />
      <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
      <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+     <Compile Include="Assets\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFocuser.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
      <Compile Include="Assets\Scripts\Events\CameraLookEvent.cs" />
