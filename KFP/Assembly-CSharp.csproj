@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CrossPopUp.cs" />
      <Compile Include="Assets\DonutShopDonut1.cs" />
      <Compile Include="Assets\DonutShopDonut2.cs" />
      <Compile Include="Assets\DonutShopScreenController.cs" />
