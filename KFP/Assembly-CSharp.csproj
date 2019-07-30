@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CityMusicController.cs" />
      <Compile Include="Assets\CrossPopUp.cs" />
      <Compile Include="Assets\DonutShopDonut1.cs" />
      <Compile Include="Assets\DonutShopDonut2.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
      <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
      <Compile Include="Assets\PlayerCollider.cs" />
+     <Compile Include="Assets\RedSkyMusic.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFocuser.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraTimelines.cs" />
      <Compile Include="Assets\Scripts\Events\CameraLookEvent.cs" />
