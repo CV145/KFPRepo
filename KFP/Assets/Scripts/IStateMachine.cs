@@ -16,6 +16,9 @@ public interface IStateMachine <StatesEnum>
         get;
     }
 
-
+    /// <summary>
+    /// A method that sets the current state.
+    /// </summary>
+    /// <param name="stateToChangeTo"></param>
     void setState(StatesEnum stateToChangeTo);
 }
