@@ -5,7 +5,7 @@ using UnityEngine;
 //in charge of player movement 
 public class PlayerMovement : CharacterMovement
 {
-    Transform cameraTransform;
+    private Transform cameraTransform;
     [SerializeField] bool disableCameraFlipping;
     public bool DisableCameraFlipping { set => disableCameraFlipping = value; }
 

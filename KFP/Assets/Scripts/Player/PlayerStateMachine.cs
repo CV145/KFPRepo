@@ -2,37 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//controls animation and AI states for player such as running and shooting
-public class PlayerStateMachine : StateMachine
+/// <summary>
+/// Player states include:
+/// RUNNING
+/// SHOOTING
+/// </summary>
+public enum PlayerStates
+{
+    RUNNING,
+    SHOOTING
+}
+
+/// <summary>
+/// This class gives the player character a collection of states that control animations and gameplay. For
+/// example, the SHOOTING state puts the player character in its shooting animation and unlocks 
+/// the ability to shoot. 
+/// </summary>-
+public class PlayerStateMachine : IStateMachine <PlayerStates>
 {
     [SerializeField] Animator animator;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerShoot playerShoot;
+    [SerializeField] PlayerStates currentState;
 
-    [SerializeField]
-    public enum playerStates
-    {
-        RUNNING,
-        SHOOTING
-    }
-    [SerializeField] playerStates currentState;
-    public playerStates CurrentState
+    /// <summary>
+    /// The player's current state. Can be changed by calling setState.
+    /// </summary>
+    public PlayerStates CurrentState
     {
         get => currentState;
     }
-    
-    
 
-    
-    public void SetState(string stateName)
+    /// <summary>
+    /// Set and change the current player state.
+    /// </summary>
+    /// <param name="stateToChangeTo"></param>
+    public void setState(PlayerStates stateToChangeTo)
     {
-        switch (stateName)
+        switch (stateToChangeTo)
         {
-            case "RUNNING":
-                currentState = playerStates.RUNNING;
+            case PlayerStates.RUNNING:
+                currentState = PlayerStates.RUNNING;
                 break;
-            case "SHOOTING":
-                currentState = playerStates.SHOOTING;
+            case PlayerStates.SHOOTING:
+                currentState = PlayerStates.SHOOTING;
                 break;
         }
     }
@@ -40,17 +53,21 @@ public class PlayerStateMachine : StateMachine
     // Update is called once per frame
     void Update()
     {
-        switch(currentState)
+        ActOnCurrentState();
+    }
+
+    private void ActOnCurrentState()
+    {
+        switch (currentState)
         {
-            case playerStates.RUNNING:
-                
+            case PlayerStates.RUNNING:
                 animator.SetBool("shotIdle", false);
                 animator.SetBool("Shooting", false);
                 animator.SetBool("Running", true);
                 playerMovement.AllowMovement = true;
                 playerShoot.AllowShooting = false;
                 break;
-            case playerStates.SHOOTING:
+            case PlayerStates.SHOOTING:
                 animator.SetBool("Running", false);
                 animator.SetBool("shotIdle", true);
                 playerMovement.AllowMovement = false;
@@ -59,6 +76,7 @@ public class PlayerStateMachine : StateMachine
                 break;
         }
     }
+
     private bool AnimatorActiveShot(bool ActiveShot)
     {
        
