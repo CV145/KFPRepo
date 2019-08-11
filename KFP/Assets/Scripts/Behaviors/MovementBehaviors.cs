@@ -58,40 +58,5 @@ public class MovementBehaviors : MonoBehaviour
                     );
     }
 
-    /// <summary>
-    /// Moves a given object towards a target object on the x-axis by a move speed amount. 
-    /// If the object to move has a Flipper component, it can be passed in to flip the object.
-    /// </summary>
-    /// <param name="objToMove"></param>
-    /// <param name="targetObj"></param>
-    /// <param name="moveSpeed"></param>
-    /// <param name="flipper"></param>
-    public static void HorizontalRushTowards(Transform objToMove, Transform targetObj, float moveSpeed, Flipper flipper)
-    {
-        int facingDirection = 0;
-        
-        if (targetObj.position.x < objToMove.position.x)
-        {
-            facingDirection = -1;
-            if (flipper.FacingRight)
-            {
-                flipper.Flip();
-            }
-        }
-        else if (targetObj.transform.position.x > objToMove.position.x)
-        {
-            facingDirection = 1;
-            if (!flipper.FacingRight)
-            {
-                flipper.Flip();
-            }
-        }
-
-        objToMove.position = new Vector2(
-                    objToMove.position.x + moveSpeed * facingDirection,
-                    objToMove.position.y
-                    );
-    }
-
 
 }

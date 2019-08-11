@@ -6,11 +6,8 @@ using UnityEngine;
 /// An Animator state with behavior for rushing towards the player's direction horiontally. 
 /// The player is found using a tag. 
 /// </summary>
-public class RushToPlayerState : State
+public class RushToPlayerState : EnemyState
 {
-    GameObject player;
-    Transform playerPos;
-    Flipper flipper;
     [Header("How fast this object will move.")]
     [SerializeField] float moveSpeed;
 
@@ -18,24 +15,11 @@ public class RushToPlayerState : State
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerPos = player.transform;
-        if (self.GetComponent<Flipper>() != null)
-        {
-            flipper = self.GetComponent<Flipper>();
-        }
-        else
-        {
-            flipper = null;
-        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (flipper != null)
-            MovementBehaviors.HorizontalRushTowards(self.transform, playerPos, moveSpeed, flipper);
-        else
             MovementBehaviors.HorizontalRushTowards(self.transform, playerPos, moveSpeed);
     }
 
