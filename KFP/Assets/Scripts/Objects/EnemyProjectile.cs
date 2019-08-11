@@ -2,20 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProjectile : ZombieRushMovement
+public class EnemyProjectile : MonoBehaviour
 {
-    //The ZombieRushMovement script also works for projectiles.
-    private void OnEnable()
-    {
-        //print("on enable called");
-        FindPlayer();
-        DetermineMoveDirection();
-    }
+    //changed because projectiles should be able to move diagonally too
 
-    new void Update()
-    {
-        base.Update();
-        Rush(TheManager.Game.GameActive);
-    }
+
+ 
         
 }

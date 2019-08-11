@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Movement;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-//moves an object in a circular path
-public class EllipticalMovement : AIMovement
+/// <summary>
+/// Movement for moving an object in an elliptical shape.
+/// </summary>
+public class EllipticalMovement : MovementState
 {
     [SerializeField] Vector2 center;
     public Vector2 Center
@@ -26,7 +29,6 @@ public class EllipticalMovement : AIMovement
         StartCoroutine(MoveThroughPoints());
     }
 
-    //makes a new point on ellipse based off progress value
     private void SetPosition()
     {
             float angle = progress * 360 * Mathf.Deg2Rad;

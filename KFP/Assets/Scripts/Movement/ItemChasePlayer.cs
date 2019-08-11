@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Movement;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 //used on any item that is meant to go straight to the player
 [RequireComponent(typeof(BoxCollider2D))]
-public class ItemChasePlayer : AIMovement
+public class ItemChasePlayer : MovementState
 {
     GameObject player;
     [SerializeField] UnityEvent onCollidePlayer;
