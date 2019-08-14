@@ -52,12 +52,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 2390391196692110530}
   health: {fileID: 8818598493050518337}
-  currentState: 0
   moveSpeed: 0.1
   rangeToMeleePlayer: 3
   rangeToShootPlayer: 20
-  intervalBetweenFiring: 2
-  intervalBetweenMelees: 2
+  intervalBetweenFiring: 5
+  intervalBetweenMelees: 5
 --- !u!114 &7019522222023279725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +72,7 @@ MonoBehaviour:
   firePoint: {fileID: 2290731087426285964}
   currentAmmo: 3
   maxAmmo: 3
+  hasInfiniteAmmo: 0
   projectile: {fileID: 7130049004295678825, guid: 87af275a3c4935f45b48b29fd541cfe9,
     type: 3}
   randomizeStartingAmmo: 1

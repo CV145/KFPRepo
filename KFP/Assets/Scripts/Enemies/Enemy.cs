@@ -7,11 +7,11 @@ using UnityEngine;
 /// </summary>
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] Animator stateMachine;
+    [SerializeField] Animator animator;
     /// <summary>
     /// An Animator reference that functions as a state machine.
     /// </summary>
-    public Animator AnimController { get => stateMachine; }
+    public Animator AnimController { get => animator; }
     [SerializeField] Health health;
     /// <summary>
     /// The Health script attached to the enemy.

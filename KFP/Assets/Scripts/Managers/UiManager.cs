@@ -30,9 +30,9 @@ public class UiManager : MonoBehaviour
     void Update()
     {
         //Display the current ammo count every frame.
-        ammoCountText.text = "Ammo :" + " " + stats.ammoCount + "/12";
-        scoreCountText.text = "Score:" + " " + stats.score;
-        healthText.text = "Health:" + " " + stats.health + "/5";
+        //ammoCountText.text = "Ammo :" + " " + stats.ammoCount + "/12";
+        //scoreCountText.text = "Score:" + " " + stats.score;
+        //healthText.text = "Health:" + " " + stats.health + "/5";
     }
 
     public void setPanelOnOff(GameObject panel, bool on)
