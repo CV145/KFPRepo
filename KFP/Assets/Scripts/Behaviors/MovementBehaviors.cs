@@ -5,33 +5,9 @@ using UnityEngine;
 /// <summary>
 /// Contains reuseable static behaviors related to movement, moving, jumping, etc. 
 /// </summary>
-public class MovementBehaviors : MonoBehaviour
+public static class MovementBehaviors : object
 {
-    /// <summary>
-    /// Moves a given object to the left by a move speed amount.
-    /// </summary>
-    /// <param name="objToMove"></param>
-    /// <param name="moveSpeed"></param>
-    public static void MoveLeft(Transform objToMove, float moveSpeed)
-    {
-        objToMove.position = new Vector2(
-                    objToMove.position.x + moveSpeed * -1,
-                    objToMove.position.y
-                    );
-    }
-
-    /// <summary>
-    /// Moves a given object to the right by a move speed amount.
-    /// </summary>
-    /// <param name="objToMove"></param>
-    /// <param name="moveSpeed"></param>
-    public static void MoveRight (Transform objToMove, float moveSpeed)
-    {
-        objToMove.position = new Vector2(
-                    objToMove.position.x + moveSpeed,
-                    objToMove.position.y
-                    );
-    }
+    
 
     /// <summary>
     /// Moves a given object towards a target object on the x-axis by a move speed amount. 
@@ -39,7 +15,7 @@ public class MovementBehaviors : MonoBehaviour
     /// <param name="objToMove"></param>
     /// <param name="targetObj"></param>
     /// <param name="moveSpeed"></param>
-    public static void HorizontalRushTowards(Transform objToMove, Transform targetObj, float moveSpeed)
+    public static void HorizontalMoveTowards(Transform objToMove, Transform targetObj, float moveSpeed)
     {
         int facingDirection = 0;
 

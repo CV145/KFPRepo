@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Utilities;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using useful;
+
 
 //Game object: Firepoint
 //Works to rotate the fire point to look at where the mouse is 
@@ -27,7 +28,7 @@ public class FirePointRotator : MonoBehaviour
     {
             Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             //print("mouse position (world): " + mousePos);
-            float angle = UsefulMethods.FindAngleBetweenPositions2D(this.transform.position, mousePos);
+            float angle = MathMethods.FindAngleBetweenPositions2D(this.transform.position, mousePos);
             //print("angle: " + angle);
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }

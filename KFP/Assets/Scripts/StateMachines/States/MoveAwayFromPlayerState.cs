@@ -1,15 +1,21 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.StateMachines.States;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MoveDirection
+{
+    MOVE_RIGHT, MOVE_LEFT
+}
 /// <summary>
-/// An Animator state with behavior for rushing towards the player's direction horiontally. 
-/// The player is found using a tag. 
+/// This state will move the game object away from the player in a chosen or passed-in direction. 
 /// </summary>
-public class RushToPlayerState : EnemyState
+public class MoveAwayFromPlayerState : NPCState
 {
     [Header("How fast this object will move.")]
     [SerializeField] float moveSpeed;
+    [Header("Direction to move to.")]
+    [SerializeField] MoveDirection moveDirection;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,7 +26,17 @@ public class RushToPlayerState : EnemyState
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-            MovementBehaviors.HorizontalRushTowards(self.transform, playerPos, moveSpeed);
+        //switch (moveDirection)
+        //{
+        //    case MoveDirection.MOVE_RIGHT:
+        //        if (flipper != null && !flipper.FacingRight) flipper.Flip();
+        //        MovementBehaviors.MoveRight(self.transform, moveSpeed);
+        //        break;
+        //    case MoveDirection.MOVE_LEFT:
+        //        if (flipper != null && flipper.FacingRight) flipper.Flip();
+        //        MovementBehaviors.MoveLeft(self.transform, moveSpeed);
+        //        break;
+        //}
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

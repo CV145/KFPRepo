@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//A collection of useful methods that can be reused
-namespace useful
+/// <summary>
+/// A collection of useful math methods.
+/// </summary>
+namespace Assets.Scripts.Utilities
 {
-    public class UsefulMethods : MonoBehaviour
+    public static class MathMethods : object
     {
         //Finds the angle between the game object and some other position in 2D world space
         public static float FindAngleBetweenPositions2D(Vector2 currentObject, Vector2 otherObject)
