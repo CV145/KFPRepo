@@ -54,7 +54,7 @@ MonoBehaviour:
   backflipSpeed: 0.1
   rangeToShootPlayer: 0
   intervalBetweenFiring: 0
-  backflipRiseTime: 0.5
+  backflipRiseTime: 0.2
 --- !u!114 &7769456488547470263
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -98,7 +98,7 @@ public class CyclopsLotLizard : Enemy
         }
 
        
-
+        //TODO add speed variables for each different movement
         if (backflipTimeLeft >= 0)
         {
             if (flipper.FacingRight)
@@ -118,13 +118,13 @@ public class CyclopsLotLizard : Enemy
             print("starting Y pos: " + startingYPos);
             if (flipper.FacingRight)
             {
-                mover.MoveLeft(moveSpeed);
-                mover.MoveDown(moveSpeed);
+                mover.MoveLeft(backflipSpeed);
+                mover.MoveDown(backflipSpeed);
             }
             else
             {
-                mover.MoveRight(moveSpeed);
-                mover.MoveDown(moveSpeed);
+                mover.MoveRight(backflipSpeed);
+                mover.MoveDown(backflipSpeed);
             }
 
             if (transform.position.y <= startingYPos)
