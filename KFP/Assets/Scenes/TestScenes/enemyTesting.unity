@@ -191,12 +191,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &142315122 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2390391196692110530, guid: db2b73de50e003443817f8cd6cfc07fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1328155022}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216089024
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,113 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab71266c787445819c79231b69c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
-  health: {fileID: 0}
-  distanceFromPlayer: 0
-  player: {fileID: 0}
-  currentState: 0
 --- !u!114 &603023828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,6 +618,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.3686843}
   m_EdgeRadius: 0
+--- !u!1 &802088968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6210415709749137824, guid: 00b1b845818b70c4394c472a4f23d20e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6210415709571131105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &802088969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802088968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f92c94e634d81b4e8492f6a79ecd0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 99
+  maxHealth: 99
+--- !u!114 &802088970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802088968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f83bbcde0447a439eb98210b17fe71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 0.1
+  glitchTime: 0.1
+  intensity: 0.14
+  verticalJump: 0.3
+  horizontalShake: 0.1
+  colorDrift: 0.2
 --- !u!1 &912781833
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,17 +699,17 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1052787572 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2390391196692110530, guid: db2b73de50e003443817f8cd6cfc07fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1229131637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1081422185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6228630897286159704, guid: accd53646303e554d94954b040822845,
     type: 3}
   m_PrefabInstance: {fileID: 4278923595478107982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1198939295 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5311810365381886495, guid: db2b73de50e003443817f8cd6cfc07fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1229131637}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1214168714 stripped
 MonoBehaviour:
@@ -809,6 +734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glasses Lot Lizard (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032402822439588342, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7541649233647995241, guid: db2b73de50e003443817f8cd6cfc07fd,
         type: 3}
@@ -883,15 +813,19 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1052787572}
+      objectReference: {fileID: 1198939295}
+    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: shootTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: shootOffset
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2b73de50e003443817f8cd6cfc07fd, type: 3}
---- !u!95 &1274266087 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 834436210, guid: 5925f05073c488d428af59c84ffc6938,
-    type: 3}
-  m_PrefabInstance: {fileID: 1030731197472292389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1328155022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -903,6 +837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glasses Lot Lizard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032402822439588342, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7541649233647995241, guid: db2b73de50e003443817f8cd6cfc07fd,
         type: 3}
@@ -976,7 +915,7 @@ PrefabInstance:
     - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
         type: 3}
       propertyPath: intervalBetweenFiring
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
         type: 3}
@@ -987,8 +926,24 @@ PrefabInstance:
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 142315122}
-    m_RemovedComponents: []
+      objectReference: {fileID: 2127581439}
+    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: shootTime
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: shootOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: shootAnimationTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8818598493050518337, guid: db2b73de50e003443817f8cd6cfc07fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db2b73de50e003443817f8cd6cfc07fd, type: 3}
 --- !u!1001 &1465190085
 PrefabInstance:
@@ -1001,6 +956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glasses Lot Lizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032402822439588342, guid: db2b73de50e003443817f8cd6cfc07fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7541649233647995241, guid: db2b73de50e003443817f8cd6cfc07fd,
         type: 3}
@@ -1061,26 +1021,6 @@ PrefabInstance:
       propertyPath: objToFace
       value: 
       objectReference: {fileID: 1873400931}
-    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
-        type: 3}
-      propertyPath: intervalBetweenFiring
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
-        type: 3}
-      propertyPath: intervalBetweenMelees
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420645677662275557, guid: db2b73de50e003443817f8cd6cfc07fd,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1587086798}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2b73de50e003443817f8cd6cfc07fd, type: 3}
 --- !u!1 &1519604510
@@ -1095,7 +1035,6 @@ GameObject:
   - component: {fileID: 1519604514}
   - component: {fileID: 1519604513}
   - component: {fileID: 1519604511}
-  - component: {fileID: 1519604515}
   m_Layer: 0
   m_Name: TheManager
   m_TagString: Untagged
@@ -1162,25 +1101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameActive: 0
---- !u!114 &1519604515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519604510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f83bbcde0447a439eb98210b17fe71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 519420031}
---- !u!95 &1587086798 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2390391196692110530, guid: db2b73de50e003443817f8cd6cfc07fd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1465190085}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1661774554 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 861750788533313916, guid: accd53646303e554d94954b040822845,
@@ -1211,6 +1131,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6210415709571131105}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2127581439 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5311810365381886495, guid: db2b73de50e003443817f8cd6cfc07fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1328155022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1030731197472292389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1222,6 +1148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crackhead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030731197032316887, guid: 5925f05073c488d428af59c84ffc6938,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030731197032316881, guid: 5925f05073c488d428af59c84ffc6938,
         type: 3}
@@ -1278,11 +1209,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1030731197032316883, guid: 5925f05073c488d428af59c84ffc6938,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1274266087}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5925f05073c488d428af59c84ffc6938, type: 3}
 --- !u!1001 &4278923595478107982
@@ -1602,7 +1528,8 @@ PrefabInstance:
       propertyPath: currentState
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 397120295, guid: 00b1b845818b70c4394c472a4f23d20e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 00b1b845818b70c4394c472a4f23d20e, type: 3}
 --- !u!1001 &7769456489733130694
 PrefabInstance:

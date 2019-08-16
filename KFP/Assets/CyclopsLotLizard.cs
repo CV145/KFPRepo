@@ -75,6 +75,7 @@ public class CyclopsLotLizard : Enemy
     {
         if (backflipTimeLeft <= 0)
         {
+            StopCoroutine("LoseTime");
             AnimController.SetTrigger("fireTrigger");
             shooter.Fire();
             backflipTimeLeft = intervalBetweenFiring;
@@ -114,8 +115,9 @@ public class CyclopsLotLizard : Enemy
         }
         else 
         {
-            print("going down");
-            print("starting Y pos: " + startingYPos);
+            // print("going down");
+            // print("starting Y pos: " + startingYPos);
+            StopCoroutine("LoseTime");
             if (flipper.FacingRight)
             {
                 mover.MoveLeft(backflipSpeed);
@@ -129,7 +131,7 @@ public class CyclopsLotLizard : Enemy
 
             if (transform.position.y <= startingYPos)
             {
-                print("switching state back. current y pos: " + transform.position.y);
+                //print("switching state back. current y pos: " + transform.position.y);
                 transform.position = new Vector2(transform.position.x, startingYPos);
                 backflipTimeLeft = backflipRiseTime;
                 AnimController.SetBool("doingBackflip", false);

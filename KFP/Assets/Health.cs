@@ -5,10 +5,10 @@ using UnityEngine;
 /// <summary>
 /// Component that keeps track of health.
 /// </summary>
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
-    [SerializeField] int currentHealth;
-    [SerializeField] int maxHealth;
+    [SerializeField] protected int currentHealth;
+    [SerializeField] protected int maxHealth;
 
     /// <summary>
     /// The current health. Can't go above max health or below zero.
@@ -27,38 +27,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Increase health by a given amount.
-    /// </summary>
-    /// <param name="amount"></param>
-    public void IncreaseHealth(int amount)
-    {
-        currentHealth += amount;
-        if (CurrentHealth > MaxHealth)
-        {
-            currentHealth = MaxHealth;
-        }
-    }
+    public abstract void IncreaseHealth(int amount);
 
-    /// <summary>
-    /// Lower health by a given amount.
-    /// </summary>
-    /// <param name="amount"></param>
-    public void DecreaseHealth(int amount)
-    {
-        currentHealth -= amount;
-        if (CurrentHealth <= 0)
-        {
-            currentHealth = 0;
-        }
-    }
+    
+    public abstract void DecreaseHealth(int amount);
 
-    /// <summary>
-    /// Increase max health by a given amount.
-    /// </summary>
-    /// <param name="amount"></param>
-    public void IncreaseMaxHealth (int amount)
-    {
-        maxHealth += amount;
-    }
+    
 }

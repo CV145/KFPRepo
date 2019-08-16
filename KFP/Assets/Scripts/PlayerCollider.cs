@@ -8,7 +8,7 @@ public class PlayerCollider : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            TheManager.Camera.glitch();
+            //TheManager.Camera.glitch();
         }
     }
 }

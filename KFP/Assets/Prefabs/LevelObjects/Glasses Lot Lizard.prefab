@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1349587580}
   - component: {fileID: 7816043363976425541}
   - component: {fileID: 1349587578}
-  - component: {fileID: 8818598493050518337}
+  - component: {fileID: 5311810365381886495}
+  - component: {fileID: 4499158575273581249}
   m_Layer: 9
   m_Name: Glasses Lot Lizard
   m_TagString: Enemy
@@ -33,7 +34,6 @@ Transform:
   m_LocalPosition: {x: 7.61, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
-  - {fileID: 2642452149839707098}
   - {fileID: 2290731087426285964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,13 +50,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4216b82803c4e3240a9bd9e11d835be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 2390391196692110530}
-  health: {fileID: 8818598493050518337}
+  animator: {fileID: 5311810365381886495}
+  health: {fileID: 0}
   moveSpeed: 0.1
   rangeToMeleePlayer: 3
   rangeToShootPlayer: 20
   intervalBetweenFiring: 5
   intervalBetweenMelees: 5
+  shootAnimationTime: 0.8
 --- !u!114 &7019522222023279725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e26a58384da0647a2ffe0542fed419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 2290731087426285964}
   currentAmmo: 3
   maxAmmo: 3
   hasInfiniteAmmo: 0
+  firePoint: {fileID: 2290731087426285964}
   projectile: {fileID: 7130049004295678825, guid: 87af275a3c4935f45b48b29fd541cfe9,
     type: 3}
   randomizeStartingAmmo: 1
@@ -120,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.3, y: 2.8}
+    oldSize: {x: 3.67, y: 2.75}
     newSize: {x: 2.3, y: 2.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,90 +130,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3882122, y: 2.812725}
   m_EdgeRadius: 0
---- !u!114 &8818598493050518337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032402822439588342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef0ef398a3fbca4a8a20ffce4e49be2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
---- !u!1 &2066367008579252965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2290731087426285964}
-  m_Layer: 9
-  m_Name: Fire Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2290731087426285964
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066367008579252965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7541649233647995241}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8618913332799928821
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2642452149839707098}
-  - component: {fileID: 2390391196692110530}
-  - component: {fileID: 7838431985302288649}
-  m_Layer: 9
-  m_Name: Render
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2642452149839707098
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618913332799928821}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7541649233647995241}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2390391196692110530
+--- !u!95 &5311810365381886495
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618913332799928821}
+  m_GameObject: {fileID: 2032402822439588342}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 79ad809804098e44495d6f84f9af8977, type: 2}
@@ -224,13 +149,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &7838431985302288649
+--- !u!212 &4499158575273581249
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618913332799928821}
+  m_GameObject: {fileID: 2032402822439588342}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -272,3 +197,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2066367008579252965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2290731087426285964}
+  m_Layer: 9
+  m_Name: Fire Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2290731087426285964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066367008579252965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.75, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7541649233647995241}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

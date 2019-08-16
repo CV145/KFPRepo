@@ -31,6 +31,8 @@ namespace Assets.Scripts.Enemies
         [SerializeField] float rangeToShootPlayer;
         [SerializeField] float intervalBetweenFiring;
         [SerializeField] float intervalBetweenMelees;
+        [Header("Used to find exact time to fire")]
+        [SerializeField] float shootAnimationTime = 0.8f; //0.8 best time so far
         float timeLeft = 0;
         float absoluteDistanceFromPlayer;
 
@@ -84,9 +86,9 @@ namespace Assets.Scripts.Enemies
         {
             if (timeLeft <= 0)
             {
-                //print("right before setting anim trigger");
+                StopCoroutine("LoseTime");
                 AnimController.SetTrigger("fireTrigger");
-                shooter.Fire();
+                StartCoroutine("FireProjectile");
                 timeLeft = intervalBetweenFiring;
                 StartCoroutine("LoseTime");
             }
@@ -102,6 +104,7 @@ namespace Assets.Scripts.Enemies
         {
             if (timeLeft <= 0)
             {
+                StopCoroutine("LoseTime");
                 AnimController.SetTrigger("meleeTrigger");
                 timeLeft = intervalBetweenMelees;
                 StartCoroutine("LoseTime");
@@ -110,11 +113,18 @@ namespace Assets.Scripts.Enemies
 
         IEnumerator LoseTime()
         {
-            while (true)
+            while (true) 
             {
                 yield return new WaitForSeconds(1);
                 timeLeft--;
             }
+        }
+
+        //fire projectile at exact time in animation
+        IEnumerator FireProjectile()
+        {
+                yield return new WaitForSeconds(shootAnimationTime);
+                shooter.Fire();
         }
     }
 }

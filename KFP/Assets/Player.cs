@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// The main script for the player which puts everything together.
-/// </summary>
-/// 
+
 
 public enum PlayerStates
 {
@@ -13,6 +10,10 @@ public enum PlayerStates
     SHOOT
 }
 
+/// <summary>
+/// The main script for the player behavior.
+/// </summary>
+/// 
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(Flipper))]
 [RequireComponent(typeof(PlayerShooter))]

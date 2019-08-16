@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 8651131630220892987}
   - component: {fileID: 3869739663417539939}
   - component: {fileID: 1030731197032316886}
+  - component: {fileID: 1479203721}
   m_Layer: 0
   m_Name: Crackhead
   m_TagString: Untagged
@@ -146,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a932cbeece8797489837b83d09533a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
-  disableBrain: 0
+  animator: {fileID: 834436210}
+  health: {fileID: 0}
   currentState: 0
   moveSpeed: 0.2
 --- !u!114 &8651131630220892987
@@ -203,3 +204,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2130253, y: 4.945656}
   m_EdgeRadius: 0
+--- !u!114 &1479203721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030731197032316887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e744e48fa71fdc40a12bcbc67a6b7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToCause: 1
+  destroySelfOnCollision: 0
