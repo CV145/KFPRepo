@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1349587578}
   - component: {fileID: 5311810365381886495}
   - component: {fileID: 4499158575273581249}
+  - component: {fileID: 2969502928827502646}
+  - component: {fileID: 6570918816967427664}
   m_Layer: 9
   m_Name: Glasses Lot Lizard
   m_TagString: Enemy
@@ -197,6 +199,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2969502928827502646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032402822439588342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cca6b7cd86c44343b55808797d679b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0
+  intervalTime: 0
+--- !u!114 &6570918816967427664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032402822439588342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95faa95c597d1fb47b98738e2314f54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2066367008579252965
 GameObject:
   m_ObjectHideFlags: 0

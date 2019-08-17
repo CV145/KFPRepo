@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] Animator animator;
     Mover mover;
     Flipper flipper;
+    PlayerShooter shooter;
 
     /// <summary>
     /// The current state of the player. Either RUN or SHOOT.
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
     {
         mover = GetComponent<Mover>();
         flipper = GetComponent<Flipper>();
+        shooter = GetComponent<PlayerShooter>();
     }
 
     // Update is called once per frame
@@ -72,21 +74,15 @@ public class Player : MonoBehaviour
         {
             animator.SetTrigger("fireTrigger");
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Shoot(mousePos);
-        }
-    }
-
-    private void Shoot(Vector2 shootPos)
-    {
-        //print(shootPos);
-        //button clicks could check if it hit something using a raycast where clicked
-        if (shootPos.x < transform.position.x && flipper.FacingRight)
-        {
-            flipper.Flip();
-        }
-        else if (shootPos.x > transform.position.x && !flipper.FacingRight)
-        {
-            flipper.Flip();
+            if (mousePos.x < transform.position.x && flipper.FacingRight)
+            {
+                flipper.Flip();
+            }
+            else if (mousePos.x > transform.position.x && !flipper.FacingRight)
+            {
+                flipper.Flip();
+            }
+            shooter.Shoot(mousePos);
         }
     }
 }
