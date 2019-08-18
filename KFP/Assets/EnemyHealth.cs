@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 /// <summary>
@@ -9,7 +10,9 @@ using UnityEngine;
 [RequireComponent(typeof(RedFlasher))]
 public class EnemyHealth : Health
 {
-    RedFlasher flasher;
+    RedFlasher flasher; //serialize do not force
+    [SerializeField] UnityEvent reactionWhenHealthIsZero;
+    [SerializeField] bool flashWhenHurt = true;
 
     private void Start()
     {
@@ -40,6 +43,7 @@ public class EnemyHealth : Health
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            reactionWhenHealthIsZero.Invoke();
         }
     }
 }

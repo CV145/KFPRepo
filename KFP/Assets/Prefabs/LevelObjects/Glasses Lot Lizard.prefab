@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 4499158575273581249}
   - component: {fileID: 2969502928827502646}
   - component: {fileID: 6570918816967427664}
+  - component: {fileID: 6306937545653941026}
+  - component: {fileID: 8813528484177948823}
   m_Layer: 9
   m_Name: Glasses Lot Lizard
   m_TagString: Enemy
@@ -36,7 +38,10 @@ Transform:
   m_LocalPosition: {x: 7.61, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
+  - {fileID: 7389783087832364196}
   - {fileID: 2290731087426285964}
+  - {fileID: 3114698876315504590}
+  - {fileID: 2964260621001355776}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,11 +58,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5311810365381886495}
-  health: {fileID: 0}
+  health: {fileID: 6570918816967427664}
   moveSpeed: 0.1
   rangeToMeleePlayer: 3
   rangeToShootPlayer: 20
-  intervalBetweenFiring: 5
+  intervalBetweenFiring: 3
   intervalBetweenMelees: 5
   shootAnimationTime: 0.8
 --- !u!114 &7019522222023279725
@@ -73,12 +78,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAmmo: 3
-  maxAmmo: 3
-  hasInfiniteAmmo: 0
+  maxAmmo: 1
+  hasInfiniteAmmo: 1
   firePoint: {fileID: 2290731087426285964}
   projectile: {fileID: 7130049004295678825, guid: 87af275a3c4935f45b48b29fd541cfe9,
     type: 3}
-  randomizeStartingAmmo: 1
+  randomizeStartingAmmo: 0
 --- !u!114 &1349587580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,11 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cca6b7cd86c44343b55808797d679b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  flashDuration: 0
-  intervalTime: 0
 --- !u!114 &6570918816967427664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +228,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95faa95c597d1fb47b98738e2314f54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  reactionWhenHealthIsZero:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8813528484177948823}
+        m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  flashWhenHurt: 1
+--- !u!114 &6306937545653941026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032402822439588342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ee0500270cb6f4e946e5afb7162036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionWhenShot:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  bloodSplashEmitter: {fileID: 5892118776852242699}
+  bloodGushEmitter: {fileID: 1911603712352940262}
+  health: {fileID: 6570918816967427664}
+  reduceHealthWhenShot: 1
+  emitParticlesWhenShot: 1
+  chanceOfBloodGush: 75
+--- !u!114 &8813528484177948823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032402822439588342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c719f57542141d48882b714a40f744c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2192093084659410863}
+        m_MethodName: InstantiateParticles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2066367008579252965
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,9 +322,259 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066367008579252965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.3, z: 0}
+  m_LocalPosition: {x: -0.83, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7541649233647995241}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2964260621004879554
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7541649233647995241}
+    m_Modifications:
+    - target: {fileID: 14304447, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_Name
+      value: BloodDeathEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: makeCopiesOfParticleSystem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: randomizeVelocityMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: randomizeVelocityMax
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
+--- !u!4 &2964260621001355776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2964260621004879554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2192093084659410863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2964260621004879554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f16e7b0a02cbb74bb9a858bb8e40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &3114698876326660876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7541649233647995241}
+    m_Modifications:
+    - target: {fileID: 14304447, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_Name
+      value: BloodGushEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
+        type: 3}
+      propertyPath: randomizeVelocityMax
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
+--- !u!4 &3114698876315504590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67,
+    type: 3}
+  m_PrefabInstance: {fileID: 3114698876326660876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911603712352940262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
+    type: 3}
+  m_PrefabInstance: {fileID: 3114698876326660876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f16e7b0a02cbb74bb9a858bb8e40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &7389783087836934246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7541649233647995241}
+    m_Modifications:
+    - target: {fileID: 14304447, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_Name
+      value: BloodSplashEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
+        type: 3}
+      propertyPath: randomizeVelocityMax
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6bc49427846d3da439d9d453123132da, type: 3}
+--- !u!4 &7389783087832364196 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da,
+    type: 3}
+  m_PrefabInstance: {fileID: 7389783087836934246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5892118776852242699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
+    type: 3}
+  m_PrefabInstance: {fileID: 7389783087836934246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f16e7b0a02cbb74bb9a858bb8e40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
