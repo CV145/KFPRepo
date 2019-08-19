@@ -62,8 +62,8 @@ MonoBehaviour:
   moveSpeed: 0.1
   rangeToMeleePlayer: 3
   rangeToShootPlayer: 20
-  intervalBetweenFiring: 3
-  intervalBetweenMelees: 5
+  intervalBetweenFiring: 8
+  intervalBetweenMelees: 6
   shootAnimationTime: 0.8
 --- !u!114 &7019522222023279725
 MonoBehaviour:
@@ -339,6 +339,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodDeathEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: makeCopiesOfParticleSystem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: randomizeVelocityMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: randomizeVelocityMax
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.22
@@ -383,21 +398,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
-        type: 3}
-      propertyPath: makeCopiesOfParticleSystem
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
-        type: 3}
-      propertyPath: randomizeVelocityMin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
-        type: 3}
-      propertyPath: randomizeVelocityMax
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
 --- !u!4 &2964260621001355776 stripped
@@ -428,6 +428,11 @@ PrefabInstance:
     - target: {fileID: 14304447, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
       propertyPath: m_Name
       value: BloodGushEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
+        type: 3}
+      propertyPath: randomizeVelocityMax
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,11 +478,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
-        type: 3}
-      propertyPath: randomizeVelocityMax
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
 --- !u!4 &3114698876315504590 stripped
@@ -508,6 +508,11 @@ PrefabInstance:
     - target: {fileID: 14304447, guid: 6bc49427846d3da439d9d453123132da, type: 3}
       propertyPath: m_Name
       value: BloodSplashEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
+        type: 3}
+      propertyPath: randomizeVelocityMax
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -552,11 +557,6 @@ PrefabInstance:
     - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
-        type: 3}
-      propertyPath: randomizeVelocityMax
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc49427846d3da439d9d453123132da, type: 3}

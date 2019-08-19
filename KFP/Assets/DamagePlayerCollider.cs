@@ -8,21 +8,38 @@ using Assets.Scripts.Utilities;
 /// 
 /// </summary>
 ///
+[RequireComponent(typeof(Destroyer))]
 public class DamagePlayerCollider : MonoBehaviour
 {
     [SerializeField] int damageToCause = 1;
     [SerializeField] bool destroySelfOnCollision;
+    [SerializeField] bool disableCollider;
+    Destroyer destroyer;
+
+    private void Start()
+    {
+        destroyer = GetComponent<Destroyer>();
+    }
+
+    /// <summary>
+    /// Don't hurt player if true.
+    /// </summary>
+    public bool DisableCollider { get => disableCollider; set => disableCollider = value; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            GameObject player = collision.gameObject;
-            player.GetComponent<PlayerHealth>().DecreaseHealth(damageToCause);
+            if (!disableCollider)
+            {
+                GameObject player = collision.gameObject;
+                player.GetComponent<PlayerHealth>().DecreaseHealth(damageToCause);
+            }
+           
 
             if (destroySelfOnCollision)
             {
-                GameObject.Destroy(this.gameObject);
+                destroyer.DestroySelf();
             }
         }
 

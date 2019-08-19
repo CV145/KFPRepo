@@ -32,7 +32,16 @@ public class PlayerShooter : Shooter
         if (hitInfo.transform != null)
         {
             GameObject shotObject = hitInfo.transform.gameObject;
-            shotObject.GetComponent<ShotReceiver>().ReceiveShot(attackPower, targetShotPos);
+            shotObject.GetComponent<ShotReceiver>().ReceiveShot();
+
+            try
+            {
+                shotObject.GetComponent<EnemyShotReceiver>().CauseDamage(attackPower, targetShotPos);
+            }
+            catch (System.NullReferenceException)
+            {
+                //object that was shot doesn't have an enemy shot receiver
+            }
         }
         else
         {

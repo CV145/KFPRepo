@@ -1,41 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Events;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
-/// Component used by shootable objects that has events that are called when shot.
+/// Component used on anything that receives player shots and reacts to them.
 /// </summary>
 public class ShotReceiver : MonoBehaviour
 {
     [Header("Used for changes in behavior")]
-    [SerializeField] UnityEvent reactionWhenShot;
-    [SerializeField] ParticleEmitter bloodSplashEmitter;
-    [SerializeField] ParticleEmitter bloodGushEmitter;
-    [SerializeField] Health health;
-    [SerializeField] bool reduceHealthWhenShot = true;
-    [SerializeField] bool emitParticlesWhenShot = true;
-    [SerializeField] float chanceOfBloodGush = 75f;
+    [SerializeField] protected UnityEvent reactionWhenShot;
 
     /// <summary>
-    /// Invoke an event, if any, and reduce health/emit particles when shot if bool is true.
+    /// Plays an event when called.
     /// </summary>
-    /// <param name="shotRaycast"></param>
-    public void ReceiveShot(int shotAttackPower, Vector2 shotPos)
+    public void ReceiveShot()
     {
         reactionWhenShot.Invoke();
-
-        if (reduceHealthWhenShot)
-            health.DecreaseHealth(shotAttackPower);
-
-        if (emitParticlesWhenShot)
-        {
-            bloodSplashEmitter.PlayParticles(shotPos);
-            if (Random.Range(0, 100) >= chanceOfBloodGush)
-            {
-                bloodGushEmitter.PlayParticles(shotPos);
-            }
-        }
-            
     }
 }

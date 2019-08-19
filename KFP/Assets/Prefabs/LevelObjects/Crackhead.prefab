@@ -59,7 +59,7 @@ MonoBehaviour:
   animator: {fileID: 1347911972611287321}
   health: {fileID: 6619868487111150280}
   currentState: 0
-  moveSpeed: 0.08
+  moveSpeed: 0.05
 --- !u!114 &8651131630220892987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToCause: 1
   destroySelfOnCollision: 0
+  disableCollider: 0
 --- !u!114 &1807126356036122703
 MonoBehaviour:
   m_ObjectHideFlags: 0

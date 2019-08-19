@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Utilities;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -10,27 +8,24 @@ using UnityEngine;
 /// 
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(Flipper))]
-[RequireComponent(typeof(ProjectileShooter))]
+[RequireComponent(typeof(EnemyShotReceiver))]
 public class CyclopsLotLizard : Enemy
 {
     public enum States
     {
         RUN,
-        SHOOT,
+        KICK,
         BACKFLIP
     }
     [SerializeField] States currentState;
     Transform player;
     Flipper flipper;
     Mover mover;
-    ProjectileShooter shooter;
+    EnemyShotReceiver shotReceiver;
     [SerializeField] float moveSpeed;
     [SerializeField] float backflipSpeed;
-    [SerializeField] float rangeToShootPlayer;
-    [SerializeField] float intervalBetweenFiring;
     [SerializeField] float backflipRiseTime;
-    float backflipTimeLeft;
-    float absoluteDistanceFromPlayer;
+    float backflipTimeLeft = 0;
     float startingYPos = 0;
 
     // Start is called before the first frame update
@@ -39,48 +34,40 @@ public class CyclopsLotLizard : Enemy
         player = GameObject.FindGameObjectWithTag("Player").transform;
         flipper = GetComponent<Flipper>();
         mover = GetComponent<Mover>();
-        shooter = GetComponent<ProjectileShooter>();
-        //flipper.ObjToFace = player;
+        shotReceiver = GetComponent<EnemyShotReceiver>();
         backflipTimeLeft = backflipRiseTime;
-
-        //currentState = States.RUN;
     }
 
     // Update is called once per frame
     void Update()
     {
-        absoluteDistanceFromPlayer = UtilityMethods.GetAbsoluteDistance(transform, player);
-
-        if (absoluteDistanceFromPlayer <= rangeToShootPlayer && currentState == States.RUN)
-        {
-            currentState = States.SHOOT;
-            //print("within shooting range and has ammo");
-        }
-
         switch (currentState)
         {
-            case States.SHOOT:
-                Shoot();
+            case States.KICK:
+                shotReceiver.ReduceHealthWhenShot = true;
+                shotReceiver.EmitParticlesWhenShot = true;
+                Kick();
                 break;
             case States.RUN:
+                shotReceiver.ReduceHealthWhenShot = false;
+                shotReceiver.EmitParticlesWhenShot = false;
                 Run();
                 break;
             case States.BACKFLIP:
+                shotReceiver.ReduceHealthWhenShot = true;
+                shotReceiver.EmitParticlesWhenShot = true;
                 Backflip();
                 break;
         }
     }
 
-    private void Shoot()
+    private void Kick()
     {
-        if (backflipTimeLeft <= 0)
+        if (!AnimController.GetBool("doingBackflip"))
         {
-            StopCoroutine("LoseTime");
-            AnimController.SetTrigger("fireTrigger");
-            shooter.Fire();
-            backflipTimeLeft = intervalBetweenFiring;
-            StartCoroutine("LoseTime");
+            AnimController.SetBool("doingMelee", true);
         }
+        mover.MoveTo(player, moveSpeed);
     }
 
     private void Run()
@@ -94,7 +81,7 @@ public class CyclopsLotLizard : Enemy
         if (!AnimController.GetBool("doingBackflip"))
         {
             AnimController.SetBool("doingBackflip", true);
-            StartCoroutine("LoseTime");
+            StartCoroutine("LoseBackflipTime");
             startingYPos = transform.position.y;
         }
 
@@ -117,7 +104,7 @@ public class CyclopsLotLizard : Enemy
         {
             // print("going down");
             // print("starting Y pos: " + startingYPos);
-            StopCoroutine("LoseTime");
+            StopCoroutine("LoseBackflipTime");
             if (flipper.FacingRight)
             {
                 mover.MoveLeft(backflipSpeed);
@@ -142,12 +129,32 @@ public class CyclopsLotLizard : Enemy
         
     }
 
-    IEnumerator LoseTime()
+    IEnumerator LoseBackflipTime()
     {
         while (true)
         {
             yield return new WaitForSeconds(1);
             backflipTimeLeft--;
+        }
+    }
+
+    /// <summary>
+    /// Override current state by passing in a string with the name of the state to change to, case sensitive.
+    /// </summary>
+    /// <param name="stateName"></param>
+    public void SetState(string stateName)
+    {
+        switch (stateName)
+        {
+            case "BACKFLIP":
+                currentState = States.BACKFLIP;
+                break;
+            case "RUN":
+                currentState = States.RUN;
+                break;
+            case "KICK":
+                currentState = States.KICK;
+                break;
         }
     }
 }

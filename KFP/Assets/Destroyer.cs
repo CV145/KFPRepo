@@ -9,12 +9,20 @@ using UnityEngine.Events;
 public class Destroyer : MonoBehaviour
 {
     [SerializeField] UnityEvent onDestroy;
+    [SerializeField] float destroyTime;
 
     /// <summary>
     /// Destroy the game object the Destroyer is attached to right after invoking a special event.
+    /// Destruction time happens after stored destroy time.
     /// </summary>
     public void DestroySelf()
     {
+        StartCoroutine(Countdown(destroyTime));
+    }
+
+    IEnumerator Countdown(float destroyTime)
+    {
+        yield return new WaitForSeconds(destroyTime);
         onDestroy.Invoke();
         GameObject.Destroy(this.gameObject);
     }
@@ -25,7 +33,6 @@ public class Destroyer : MonoBehaviour
     /// <param name="time"></param>
     public void DestroySelf(float time)
     {
-        onDestroy.Invoke();
-        GameObject.Destroy(this.gameObject, time);
+        StartCoroutine(Countdown(time));
     }
 }

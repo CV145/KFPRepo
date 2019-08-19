@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7769456488547470260}
   - component: {fileID: 7769456488547470263}
   - component: {fileID: 7769456488547470262}
-  - component: {fileID: 7769456488547470249}
   - component: {fileID: 193873524041990376}
   - component: {fileID: 2159222727616685177}
   - component: {fileID: 4163542433829167283}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 676581004892409307}
   - component: {fileID: 6753466208197005226}
   - component: {fileID: 3100376460321679020}
+  - component: {fileID: 4060948761499063195}
   m_Layer: 9
   m_Name: CyclopsLotLizard
   m_TagString: Enemy
@@ -58,11 +58,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4163542433829167283}
   health: {fileID: 2159222727616685177}
-  currentState: 2
+  currentState: 0
   moveSpeed: 0.1
   backflipSpeed: 0.1
-  rangeToShootPlayer: 0
-  intervalBetweenFiring: 0
   backflipRiseTime: 0.2
 --- !u!114 &7769456488547470263
 MonoBehaviour:
@@ -91,24 +89,6 @@ MonoBehaviour:
   facingRight: 0
   objToFace: {fileID: 0}
   offsetForObjToFace: 0
---- !u!114 &7769456488547470249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7769456488547470251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1e26a58384da0647a2ffe0542fed419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentAmmo: 0
-  maxAmmo: 0
-  hasInfiniteAmmo: 0
-  firePoint: {fileID: 0}
-  projectile: {fileID: 0}
-  randomizeStartingAmmo: 0
 --- !u!114 &193873524041990376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,14 +239,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactionWhenShot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7769456488547470260}
+        m_MethodName: SetState
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BACKFLIP
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   bloodSplashEmitter: {fileID: 3069346942445538954}
   bloodGushEmitter: {fileID: 8580703429657210316}
   health: {fileID: 2159222727616685177}
-  reduceHealthWhenShot: 1
-  emitParticlesWhenShot: 1
+  reduceHealthWhenShot: 0
+  emitParticlesWhenShot: 0
   chanceOfBloodGush: 75
 --- !u!114 &3100376460321679020
 MonoBehaviour:
@@ -296,6 +287,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  destroyTime: 0
+--- !u!114 &4060948761499063195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769456488547470251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e744e48fa71fdc40a12bcbc67a6b7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToCause: 1
+  destroySelfOnCollision: 1
+  disableCollider: 0
 --- !u!1001 &2148296838686416871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodSplashEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 2148296838672145190}
     - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.18
@@ -359,6 +371,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2148296838686416871}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &2148296838672145190 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 14304449, guid: 6bc49427846d3da439d9d453123132da,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148296838686416871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3069346942445538954 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
@@ -382,6 +400,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodDeathEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 2594450712481299977}
     - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.11
@@ -426,16 +449,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
-        type: 3}
-      propertyPath: makeCopiesOfParticleSystem
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
 --- !u!4 &2594450712481299978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa,
+    type: 3}
+  m_PrefabInstance: {fileID: 2594450712476695240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2594450712481299977 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 14304449, guid: f815532e446dba64394ee24cafcbbefa,
     type: 3}
   m_PrefabInstance: {fileID: 2594450712476695240}
   m_PrefabAsset: {fileID: 0}
@@ -462,6 +486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodGushEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5091894545406546663}
     - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.9
@@ -511,6 +540,12 @@ PrefabInstance:
 --- !u!4 &5091894545406546660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67,
+    type: 3}
+  m_PrefabInstance: {fileID: 5091894545401943590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5091894545406546663 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 14304449, guid: a0f996b53ad5f304ea5bf47601b0de67,
     type: 3}
   m_PrefabInstance: {fileID: 5091894545401943590}
   m_PrefabAsset: {fileID: 0}

@@ -60,7 +60,6 @@ public class Mover : MonoBehaviour
     /// <param name="targetPos"></param>
     public void MoveTo(Transform targetPos, float moveSpeed)
     {
-        // not working properly, needs to be fixed
         this.transform.position = Vector2.MoveTowards(transform.position, targetPos.position, moveSpeed * Time.deltaTime);
     }
 }
