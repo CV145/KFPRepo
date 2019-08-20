@@ -14,11 +14,13 @@ public class PlayerShooter : Shooter
     [SerializeField] AudioSource shotSound;
     [SerializeField] AudioSource emptySound;
     [SerializeField] AudioSource reloadSound;
+    AmmoUI ammoUI;
     ParticleSystem particles;
 
     private void Start()
     {
         particles = shotEffect.GetComponent<ParticleSystem>();
+        ammoUI = FindObjectOfType<AmmoUI>(); //should only be one ammo UI
     }
 
     /// <summary>
@@ -56,6 +58,7 @@ public class PlayerShooter : Shooter
             }
 
             currentAmmo--;
+            ammoUI.ReleaseBullet();
         }
         else
         {
@@ -68,5 +71,6 @@ public class PlayerShooter : Shooter
     {
         base.Reload();
         reloadSound.Play();
+        ammoUI.InitializeStack();
     }
 }
