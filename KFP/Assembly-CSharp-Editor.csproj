@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+     <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
      <Compile Include="Assets\Kino\Glitch\Editor\AnalogGlitchEditor.cs" />
      <Compile Include="Assets\Kino\Glitch\Editor\DigitalGlitchEditor.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
