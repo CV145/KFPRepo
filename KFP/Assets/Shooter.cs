@@ -30,5 +30,6 @@ public abstract class Shooter : MonoBehaviour
     public void Reload()
     {
         CurrentAmmo = MaxAmmo;
+        print("reloaded");
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public enum PlayerStates
 {
     RUN,
-    SHOOT
+    SHOOT,
 }
 
 /// <summary>
@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     Mover mover;
     Flipper flipper;
     PlayerShooter shooter;
+    Vector2 mousePos;
+    bool isReloading;
 
     /// <summary>
     /// The current state of the player. Either RUN or SHOOT.
@@ -70,10 +72,13 @@ public class Player : MonoBehaviour
 
     private void CheckShot()
     {
-        if (Input.GetMouseButtonDown(0))
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0) && !isReloading)
         {
-            animator.SetTrigger("fireTrigger");
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (shooter.CurrentAmmo > 0)
+                animator.SetTrigger("fireTrigger");
+
             if (mousePos.x < transform.position.x && flipper.FacingRight)
             {
                 flipper.Flip();
@@ -84,5 +89,15 @@ public class Player : MonoBehaviour
             }
             shooter.Shoot(mousePos);
         }
+        else
+        {
+            isReloading = false;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        isReloading = true;
+        shooter.Reload();
     }
 }

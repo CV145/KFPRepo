@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7447600981206723170}
   - component: {fileID: 4376127168053080140}
   - component: {fileID: 8226394506452469916}
+  - component: {fileID: 469526272}
   m_Layer: 0
   m_Name: Peso
   m_TagString: Peso
@@ -181,3 +182,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59622fb9d9668fe459963717b6ac9dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &469526272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084369316069786596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269ec2e63c04b1346885e6941c1bcb13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10

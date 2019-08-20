@@ -11,6 +11,9 @@ public class PlayerShooter : Shooter
     [SerializeField] GameObject shotEffect;
     [SerializeField] LayerMask shootRaycastMask;
     [SerializeField] int attackPower = 1;
+    [SerializeField] AudioSource shotSound;
+    [SerializeField] AudioSource emptySound;
+    [SerializeField] AudioSource reloadSound;
     ParticleSystem particles;
 
     private void Start()
@@ -24,28 +27,46 @@ public class PlayerShooter : Shooter
     /// <param name="targetShotPos"></param>
     public void Shoot(Vector2 targetShotPos)
     {
-        shotEffect.transform.position = targetShotPos;
-        particles.Play();
-        Ray2D shootRay = new Ray2D(targetShotPos, targetShotPos);
-        RaycastHit2D hitInfo = Physics2D.Raycast(shootRay.origin, shootRay.direction, 0.1f, shootRaycastMask);
-
-        if (hitInfo.transform != null)
+        if (currentAmmo > 0)
         {
-            GameObject shotObject = hitInfo.transform.gameObject;
-            shotObject.GetComponent<ShotReceiver>().ReceiveShot();
+            shotEffect.transform.position = targetShotPos;
+            particles.Play();
+            Ray2D shootRay = new Ray2D(targetShotPos, targetShotPos);
+            RaycastHit2D hitInfo = Physics2D.Raycast(shootRay.origin, shootRay.direction, 0.1f, shootRaycastMask);
 
-            try
+            shotSound.Play();
+
+            if (hitInfo.transform != null)
             {
-                shotObject.GetComponent<EnemyShotReceiver>().CauseDamage(attackPower, targetShotPos);
+                GameObject shotObject = hitInfo.transform.gameObject;
+                shotObject.GetComponent<ShotReceiver>().ReceiveShot();
+
+                try
+                {
+                    shotObject.GetComponent<EnemyShotReceiver>().CauseDamage(attackPower, targetShotPos);
+                }
+                catch (System.NullReferenceException)
+                {
+                    //object that was shot doesn't have an enemy shot receiver
+                }
             }
-            catch (System.NullReferenceException)
+            else
             {
-                //object that was shot doesn't have an enemy shot receiver
+                print("missed");
             }
+
+            currentAmmo--;
         }
         else
         {
-            print("missed");
+            emptySound.Play();
+            print("No ammo!");
         }
+    }
+
+    public void Reload()
+    {
+        base.Reload();
+        reloadSound.Play();
     }
 }
