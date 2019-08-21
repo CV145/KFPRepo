@@ -54,7 +54,7 @@ public class PlayerShooter : Shooter
             }
             else
             {
-                print("missed");
+                //print("missed");
             }
 
             currentAmmo--;
