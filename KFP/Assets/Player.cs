@@ -8,6 +8,7 @@ public enum PlayerStates
 {
     RUN,
     SHOOT,
+    IDLE
 }
 
 /// <summary>
@@ -33,6 +34,22 @@ public class Player : MonoBehaviour
     /// </summary>
     public PlayerStates CurrentState { get => currentState; set => currentState = value; }
 
+    public void SetState(string stateName)
+    {
+        switch (stateName)
+        {
+            case "RUN":
+                currentState = PlayerStates.RUN;
+                break;
+            case "SHOOT":
+                currentState = PlayerStates.SHOOT;
+                break;
+            case "IDLE":
+                currentState = PlayerStates.IDLE;
+                break;
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +66,17 @@ public class Player : MonoBehaviour
         {
             case PlayerStates.RUN:
                 animator.SetBool("shootStateActive", false);
+                animator.SetBool("idleStateActive", false);
                 Run();
                 break;
             case PlayerStates.SHOOT:
                 animator.SetBool("shootStateActive", true);
+                animator.SetBool("idleStateActive", false);
                 CheckShot();
+                break;
+            case PlayerStates.IDLE:
+                animator.SetBool("idleStateActive", true);
+                animator.SetBool("idleStateActive", true);
                 break;
         }
     }
