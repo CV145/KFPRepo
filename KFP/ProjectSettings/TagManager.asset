@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - BreakableObject
+  - FxTemporaire
+  - Peso
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backgrounds
+    uniqueID: 3187077175
+    locked: 0
+  - name: Characters
+    uniqueID: 26274859
+    locked: 0
+  - name: UILayer
+    uniqueID: 3452373477
     locked: 0

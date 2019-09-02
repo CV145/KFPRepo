@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Script for GoCircle and its animations.
-/// The GoCircle expands and gets smaller.
+/// Component that makes a game object shake every few secs.
 /// </summary>
-public class GoCircle : MonoBehaviour
+public class Shaker : MonoBehaviour
 {
    // [SerializeField] float timeBetweenExpansions;
    // [SerializeField] Vector2 expandedSize;
