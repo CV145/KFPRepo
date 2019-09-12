@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DonutShopTest.unity
+- path: Assets/Scenes/TestScenes/enemyTesting.unity
   isLoaded: 1
   isActive: 1

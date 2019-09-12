@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Bricktronic/IntroScene/IntroScene.unity
+    guid: 66187f98b3e59c5469d96ee95f8b700b
+  - enabled: 1
+    path: Assets/Bricktronic/MainMenu/MainMenu.unity
+    guid: 0ba81ca9d64d4024ea23e325dfd60165
+  - enabled: 1
+    path: Assets/Bricktronic/LevelSelector/LevelSelector.unity
+    guid: c501cbbd04f653f44b61c618d5a33cd3
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 5294560742c3be841ad27f42fe8cf097
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 5fc689a94d1c9934d95dad814af33437
@@ -17,7 +29,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestScenes/enemyTesting.unity
     guid: 5e6ee60d4c3a48449bd39915f50321f7
-  - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 5294560742c3be841ad27f42fe8cf097
   m_configObjects: {}

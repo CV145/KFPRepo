@@ -72,6 +72,13 @@ public class BulletHUDImage : MonoBehaviour
         StopCoroutine(Deactivate());
         isFlying = false;
         this.transform.localPosition = initialPosition;
-        rotator.Reset();
+
+        if (rotator != null)
+        {
+            rotator.Reset();
+        } else
+        {
+            Debug.LogError("Rotator was null!");
+        }
     }
 }

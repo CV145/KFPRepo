@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1904565969618191290, guid: fadbc656f81bf3347877710a9d872045,
         type: 3}
       propertyPath: m_Name
-      value: Sublime Bullet Time
+      value: Sublime Bullet Time Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1904565969618191291, guid: fadbc656f81bf3347877710a9d872045,
         type: 3}
@@ -119,9 +119,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904565969618191288, guid: fadbc656f81bf3347877710a9d872045,
         type: 3}
+      propertyPath: m_TargetAudioSources.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904565969618191288, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904565969618191288, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
+      propertyPath: m_EnabledAudioTracks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904565969618191288, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
+      propertyPath: m_DirectAudioMutes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904565969618191288, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
       propertyPath: m_VideoClip
       value: 
       objectReference: {fileID: 32900000, guid: af204a0309945f541a9bb380cdc7458c,
         type: 3}
+    - target: {fileID: 1904565969618191288, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
+      propertyPath: m_ControlledAudioTrackCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 669607199857638446, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
+      propertyPath: PowerupToPlay
+      value: sublime bullet time
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadbc656f81bf3347877710a9d872045, type: 3}

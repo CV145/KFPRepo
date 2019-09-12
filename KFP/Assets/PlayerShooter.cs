@@ -58,7 +58,13 @@ public class PlayerShooter : Shooter
             }
 
             currentAmmo--;
-            ammoUI.ReleaseBullet();
+            if (ammoUI != null)
+            {
+                ammoUI.ReleaseBullet();
+            } else
+            {
+                Debug.LogError("ammoUI was null!");
+            }
         }
         else
         {

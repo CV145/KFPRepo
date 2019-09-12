@@ -15,6 +15,8 @@ public class Cinematic : MonoBehaviour
     bool videoPlaying;
     [SerializeField] UnityEvent OnVideoFinishedPlaying;
 
+    public string PowerupToPlay = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,12 @@ public class Cinematic : MonoBehaviour
 
      void EndReached(VideoPlayer vp)
     {
+        Mover.MoveMultiplier = 1;
         OnVideoFinishedPlaying.Invoke();
+        if (PowerupToPlay != null)
+        {
+            Powerups.PlayPowerup(PowerupToPlay);
+        }
     }
 
     /// <summary>
@@ -38,5 +45,6 @@ public class Cinematic : MonoBehaviour
     {
       //  print("play cinematic called");
         videoPlayer.Play();
+        Mover.MoveMultiplier = 0;
     }
 }

@@ -11,8 +11,16 @@ public class Mover : MonoBehaviour
     /// Moves self to the left by a move speed amount.
     /// </summary>
     /// <param name="moveSpeed"></param>
+
+    public static float MoveMultiplier = 1;
+
+    public bool OverrideTime = false;
+
     public void MoveLeft(float moveSpeed)
     {
+        if (!OverrideTime)
+            moveSpeed *= MoveMultiplier;
+
         this.transform.position = new Vector2(
                     transform.position.x + moveSpeed * -1,
                     transform.position.y
@@ -25,6 +33,9 @@ public class Mover : MonoBehaviour
     /// <param name="moveSpeed"></param>
     public void MoveRight(float moveSpeed)
     {
+        if (!OverrideTime)
+            moveSpeed *= MoveMultiplier;
+
         this.transform.position = new Vector2(
                     transform.position.x + moveSpeed,
                     transform.position.y
@@ -36,6 +47,9 @@ public class Mover : MonoBehaviour
     /// </summary>
     public void MoveUp(float moveSpeed)
     {
+        if (!OverrideTime)
+            moveSpeed *= MoveMultiplier;
+
         this.transform.position = new Vector2(
                     transform.position.x,
                     transform.position.y + moveSpeed
@@ -48,6 +62,9 @@ public class Mover : MonoBehaviour
     /// <param name="moveSpeed"></param>
     public void MoveDown(float moveSpeed)
     {
+        if (!OverrideTime)
+            moveSpeed *= MoveMultiplier;
+
         this.transform.position = new Vector2(
                     transform.position.x,
                     transform.position.y - moveSpeed
@@ -60,6 +77,9 @@ public class Mover : MonoBehaviour
     /// <param name="targetPos"></param>
     public void MoveTo(Transform targetPos, float moveSpeed)
     {
+        if (!OverrideTime)
+            moveSpeed *= MoveMultiplier;
+
         this.transform.position = Vector2.MoveTowards(transform.position, targetPos.position, moveSpeed * Time.deltaTime);
     }
 }

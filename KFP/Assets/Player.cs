@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField] Animator animator;
     Mover mover;
     Flipper flipper;
-    PlayerShooter shooter;
+    public PlayerShooter shooter;
     Vector2 mousePos;
     bool isReloading;
 

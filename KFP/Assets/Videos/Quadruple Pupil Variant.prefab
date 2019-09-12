@@ -153,5 +153,10 @@ PrefabInstance:
       propertyPath: m_ControlledAudioTrackCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 669607199857638446, guid: fadbc656f81bf3347877710a9d872045,
+        type: 3}
+      propertyPath: PowerupToPlay
+      value: quadruple pupil
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadbc656f81bf3347877710a9d872045, type: 3}
