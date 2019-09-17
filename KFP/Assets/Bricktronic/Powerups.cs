@@ -66,7 +66,7 @@ public class Powerups : MonoBehaviour
     {
         BodySlamJamActive = true;
         BodySlamJamTimeStart = Time.time;
-        Mover.MoveMultiplier = 0;
+        //Mover.MoveMultiplier = 0;
         //Time.timeScale = 0.1f;
     }
 
@@ -80,7 +80,7 @@ public class Powerups : MonoBehaviour
     public static void SublimeBulletTime()
     {
         Time.timeScale = SublimeBulletTimeSpeedMultiplier;
-        Mover.MoveMultiplier = SublimeBulletTimeSpeedMultiplier;
+       // Mover.MoveMultiplier = SublimeBulletTimeSpeedMultiplier;
         SublimeTimeStart = Time.time;
         SublimeTimeActive = true;
         Debug.Log("Initiated SublimeTime");
@@ -156,7 +156,7 @@ public class Powerups : MonoBehaviour
     public void ReturnNormalTime()
     {
         Time.timeScale = 1;
-        Mover.MoveMultiplier = 1;
+       // Mover.MoveMultiplier = 1;
         Debug.Log("Returning time scale");
     }
 }
