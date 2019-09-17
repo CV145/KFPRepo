@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6753466208197005226}
   - component: {fileID: 3100376460321679020}
   - component: {fileID: 4060948761499063195}
+  - component: {fileID: 2677623925626863144}
   m_Layer: 9
   m_Name: CyclopsLotLizard
   m_TagString: Enemy
@@ -253,6 +254,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  ignoreReactionWhenShot: 0
   bloodSplashEmitter: {fileID: 3069346942445538954}
   bloodGushEmitter: {fileID: 8580703429657210316}
   health: {fileID: 2159222727616685177}
@@ -303,6 +305,72 @@ MonoBehaviour:
   damageToCause: 1
   destroySelfOnCollision: 1
   disableCollider: 0
+--- !u!114 &2677623925626863144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769456488547470251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fa365256af9ab4ba75ff1420c0e7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnFrozen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753466208197005226}
+        m_MethodName: set_IgnoreReactionWhenShot
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6753466208197005226}
+        m_MethodName: set_ReduceHealthWhenShot
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSlowed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnPushed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnNoStatus:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753466208197005226}
+        m_MethodName: set_IgnoreReactionWhenShot
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  currentStatus: 3
 --- !u!1001 &2148296838686416871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,11 +382,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodSplashEffect
       objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
-        type: 3}
-      propertyPath: particleSystem
-      value: 
-      objectReference: {fileID: 2148296838672145190}
     - target: {fileID: 14304450, guid: 6bc49427846d3da439d9d453123132da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.18
@@ -363,6 +426,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: 6bc49427846d3da439d9d453123132da,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 2148296838672145190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc49427846d3da439d9d453123132da, type: 3}
 --- !u!4 &2148296838672145189 stripped
@@ -400,11 +468,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodDeathEffect
       objectReference: {fileID: 0}
-    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
-        type: 3}
-      propertyPath: particleSystem
-      value: 
-      objectReference: {fileID: 2594450712481299977}
     - target: {fileID: 14304450, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.11
@@ -449,6 +512,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3983656381945893229, guid: f815532e446dba64394ee24cafcbbefa,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 2594450712481299977}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f815532e446dba64394ee24cafcbbefa, type: 3}
 --- !u!4 &2594450712481299978 stripped
@@ -486,11 +554,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodGushEffect
       objectReference: {fileID: 0}
-    - target: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
-        type: 3}
-      propertyPath: particleSystem
-      value: 
-      objectReference: {fileID: 5091894545406546663}
     - target: {fileID: 14304450, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.9
@@ -535,6 +598,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3584517114345503722, guid: a0f996b53ad5f304ea5bf47601b0de67,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 5091894545406546663}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f996b53ad5f304ea5bf47601b0de67, type: 3}
 --- !u!4 &5091894545406546660 stripped

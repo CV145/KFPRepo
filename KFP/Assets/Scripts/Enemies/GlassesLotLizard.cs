@@ -19,7 +19,7 @@ namespace Assets.Scripts.Enemies
         {
             SHOOT,
             WALKTOPLAYER,
-            MELEE
+            MELEE,
         }
         Transform player;
         Flipper flipper;

@@ -7,19 +7,25 @@ using UnityEngine;
 /// </summary>
 public class Mover : MonoBehaviour
 {
+    float statusFXMultiplier = 1;
+    public static bool gameIsPaused;
+
+    /// <summary>
+    /// A multiplier that affects move speed
+    /// </summary>
+    public float StatusFXMultiplier { set => statusFXMultiplier = value; }
+
     /// <summary>
     /// Moves self to the left by a move speed amount.
     /// </summary>
     /// <param name="moveSpeed"></param>
-
-    public static float MoveMultiplier = 1;
-
-    public bool OverrideTime = false;
-
     public void MoveLeft(float moveSpeed)
     {
-        if (!OverrideTime)
-            moveSpeed *= MoveMultiplier;
+        if (gameIsPaused)
+        {
+            moveSpeed *= 0;
+        }
+        moveSpeed *= statusFXMultiplier;
 
         this.transform.position = new Vector2(
                     transform.position.x + moveSpeed * -1,
@@ -33,8 +39,11 @@ public class Mover : MonoBehaviour
     /// <param name="moveSpeed"></param>
     public void MoveRight(float moveSpeed)
     {
-        if (!OverrideTime)
-            moveSpeed *= MoveMultiplier;
+        if (gameIsPaused)
+        {
+            moveSpeed *= 0;
+        }
+        moveSpeed *= statusFXMultiplier;
 
         this.transform.position = new Vector2(
                     transform.position.x + moveSpeed,
@@ -47,8 +56,11 @@ public class Mover : MonoBehaviour
     /// </summary>
     public void MoveUp(float moveSpeed)
     {
-        if (!OverrideTime)
-            moveSpeed *= MoveMultiplier;
+        if (gameIsPaused)
+        {
+            moveSpeed *= 0;
+        }
+        moveSpeed *= statusFXMultiplier;
 
         this.transform.position = new Vector2(
                     transform.position.x,
@@ -62,8 +74,11 @@ public class Mover : MonoBehaviour
     /// <param name="moveSpeed"></param>
     public void MoveDown(float moveSpeed)
     {
-        if (!OverrideTime)
-            moveSpeed *= MoveMultiplier;
+        if (gameIsPaused)
+        {
+            moveSpeed *= 0;
+        }
+        moveSpeed *= statusFXMultiplier;
 
         this.transform.position = new Vector2(
                     transform.position.x,
@@ -77,8 +92,11 @@ public class Mover : MonoBehaviour
     /// <param name="targetPos"></param>
     public void MoveTo(Transform targetPos, float moveSpeed)
     {
-        if (!OverrideTime)
-            moveSpeed *= MoveMultiplier;
+        if (gameIsPaused)
+        {
+            moveSpeed *= 0;
+        }
+        moveSpeed *= statusFXMultiplier;
 
         this.transform.position = Vector2.MoveTowards(transform.position, targetPos.position, moveSpeed * Time.deltaTime);
     }

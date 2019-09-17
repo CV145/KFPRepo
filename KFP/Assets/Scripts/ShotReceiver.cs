@@ -10,12 +10,16 @@ public class ShotReceiver : MonoBehaviour
 {
     [Header("Used for changes in behavior")]
     [SerializeField] protected UnityEvent reactionWhenShot;
+    [SerializeField] bool ignoreReactionWhenShot;
+
+    public bool IgnoreReactionWhenShot { get => ignoreReactionWhenShot; set => ignoreReactionWhenShot = value; }
 
     /// <summary>
     /// Plays an event when called.
     /// </summary>
     public void ReceiveShot()
     {
+        if (!ignoreReactionWhenShot)
         reactionWhenShot.Invoke();
     }
 }
