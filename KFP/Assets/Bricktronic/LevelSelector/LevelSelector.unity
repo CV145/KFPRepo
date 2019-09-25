@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 270077417}
   - component: {fileID: 270077416}
   m_Layer: 0
-  m_Name: Panel (3)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 319675301}
   - component: {fileID: 319675300}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,6 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 2
+  SceneName: Level2
 --- !u!1 &693133574
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +717,7 @@ GameObject:
   - component: {fileID: 795420647}
   - component: {fileID: 795420646}
   m_Layer: 0
-  m_Name: Panel (4)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -946,7 +947,7 @@ GameObject:
   - component: {fileID: 959468824}
   - component: {fileID: 959468823}
   m_Layer: 0
-  m_Name: Panel (1)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 6
+  SceneName: Level6
 --- !u!1 &1232304878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1155,7 @@ GameObject:
   - component: {fileID: 1232304881}
   - component: {fileID: 1232304880}
   m_Layer: 0
-  m_Name: Panel (2)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,6 +1350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 4
+  SceneName: Level4
 --- !u!1 &1313948660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 3
+  SceneName: Level3
 --- !u!1 &1428296787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,6 +1763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 5
+  SceneName: Level5
 --- !u!1 &1665132747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 1
+  SceneName: Level1
 --- !u!1 &1852844100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,7 +2073,7 @@ GameObject:
   - component: {fileID: 1852844103}
   - component: {fileID: 1852844102}
   m_Layer: 0
-  m_Name: Panel (5)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
