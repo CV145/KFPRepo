@@ -12,6 +12,10 @@ public class PlayerHealth : Health
 {
     GlitchEffectMaker glitchEffectMaker;
 
+    public Canvas UICanvas;
+
+    bool IsDead;
+
     private void Start()
     {
         glitchEffectMaker = GetComponent<GlitchEffectMaker>();
@@ -38,7 +42,25 @@ public class PlayerHealth : Health
             currentHealth -= amount;
         }
         else
-        currentHealth = 0;
+        {
+            if (!IsDead)
+            {
+                Instantiate(Resources.Load("YouSuck"), UICanvas.transform.parent);
+                IsDead = true;
+            }
+            currentHealth = 0;
+        }
+
+        switch (Random.Range(0, 2))
+        {
+            case 0:
+                DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Getting hit 1");
+                break;
+
+            case 1:
+                DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Getting hit 2");
+                break;
+        }
     }
 
     /// <summary>

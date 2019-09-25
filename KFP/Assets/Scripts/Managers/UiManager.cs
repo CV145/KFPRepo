@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    [SerializeField] Text ammoCountText;
-    [SerializeField] Text scoreCountText;
-    [SerializeField] Text healthText;
+    //[SerializeField] Text ammoCountText;
+    //[SerializeField] Text scoreCountText;
+    //[SerializeField] Text healthText;
     [SerializeField] Button pauseButton;
 
     public GameObject ActivePanel;
@@ -22,9 +22,9 @@ public class UiManager : MonoBehaviour
       
 
         stats = FindObjectOfType<PlayerStats>(); 
-        ammoCountText.text = "Ammo : 12/12";
-        scoreCountText.text = "Score : 0";
-        healthText.text = "Health : 100/100";
+        //ammoCountText.text = "Ammo : 12/12";
+        //scoreCountText.text = "Score : 0";
+        //healthText.text = "Health : 100/100";
     }
 
     void Update()

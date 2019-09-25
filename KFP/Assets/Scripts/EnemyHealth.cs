@@ -14,9 +14,18 @@ public class EnemyHealth : Health
     [SerializeField] UnityEvent reactionWhenHealthIsZero;
     [SerializeField] bool flashWhenHurt = true;
 
+    public GameObject DeathObject;
+
+    bool HasDied = false;
+
     private void Start()
     {
         flasher = GetComponent<RedFlasher>();
+        int HealthMultiplier = currentHealth * LevelSystem.LevelDifficulty;
+        if (HealthMultiplier < 1)
+            HealthMultiplier = 1;
+
+        currentHealth *= HealthMultiplier;
     }
 
     /// <summary>
@@ -40,10 +49,44 @@ public class EnemyHealth : Health
     {
         currentHealth -= decreaseAmount;
         flasher.FlashColor();
+        TryDialog();
         if (currentHealth <= 0)
         {
             currentHealth = 0;
+            TryFallApart();
             reactionWhenHealthIsZero.Invoke();
+            DialogHandler.CheckDeath(this.gameObject);
+            HasDied = true;
+        }
+    }
+
+    public void TryFallApart()
+    {
+        if (HasDied)
+            return;
+
+        if (DeathObject != null)
+        {
+            Instantiate(DeathObject,this.transform.position,this.transform.rotation);
+            //Debug.Log("Spawned Death Part");
+        }
+    }
+
+    public void TryDialog()
+    {
+        if (GetComponent<Crackhead>() != null)
+        {
+            DialogHandler.PlayEnemyDialog(this.gameObject, "Dialog/Crackhead/crackhead getting hit");
+        }
+
+        if (GetComponent<CyclopsLotLizard>())
+        {
+            DialogHandler.PlayEnemyDialog(this.gameObject, "Dialog/Lot Lizard/Third Eye/lot lizard third eye getting hit 1");
+        }
+
+        if (GetComponent<GlassesLotLizard>() != null)
+        {
+            DialogHandler.PlayEnemyDialog(this.gameObject, "Dialog/Lot Lizard/Snake/lot lizard snake getting hit 1");
         }
     }
 }

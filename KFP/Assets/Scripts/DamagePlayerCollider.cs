@@ -33,6 +33,7 @@ public class DamagePlayerCollider : MonoBehaviour
             if (!disableCollider)
             {
                 GameObject player = collision.gameObject;
+                if(player.GetComponent<PlayerHealth>())
                 player.GetComponent<PlayerHealth>().DecreaseHealth(damageToCause);
             }
            

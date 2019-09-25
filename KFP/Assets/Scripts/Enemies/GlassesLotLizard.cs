@@ -3,16 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Utilities;
 
-namespace Assets.Scripts.Enemies
-{
-
-    /// <summary>
-    /// Script for glasses-wearing lot lizards. They can shoot the player from a distance, and once they're out of ammo
-    /// they close in on the player and do melee attacks. Ammo is initialized at random.
-    /// </summary>
-    [RequireComponent(typeof(Flipper))]
-    [RequireComponent(typeof(Mover))]
-    [RequireComponent(typeof(ProjectileShooter))]
     public class GlassesLotLizard : Enemy
     {
         public enum States
@@ -71,7 +61,16 @@ namespace Assets.Scripts.Enemies
             switch (currentState)
             {
                 case States.SHOOT:
-                    Shoot();
+                switch (Random.Range(0, 2))
+                {
+                    case 0:
+                        DialogHandler.PlayEnemyDialog(this.gameObject, "Dialog/Lot Lizard/Snake/lot lizard snake attacking 1");
+                        break;
+                    case 1:
+                        DialogHandler.PlayEnemyDialog(this.gameObject, "Dialog/Lot Lizard/Snake/Lotlizard snake attacking 1");
+                        break;
+                }
+                Shoot();
                     break;
                 case States.WALKTOPLAYER:
                     WalkToPlayer();
@@ -104,6 +103,16 @@ namespace Assets.Scripts.Enemies
         {
             if (timeLeft <= 0)
             {
+            switch (Random.Range(0, 2))
+            {
+                case 0:
+                    DialogHandler.PlayEnemyDialog(gameObject, "Dialog/Lot Lizard/Snake/lot lizard snake attacking 1");
+                    break;
+
+                case 1:
+                    DialogHandler.PlayEnemyDialog(gameObject, "Dialog/Lot Lizard/Snake/Lotlizard snake attacking 1");
+                    break;
+            }
                 StopCoroutine("LoseTime");
                 AnimController.SetTrigger("meleeTrigger");
                 timeLeft = intervalBetweenMelees;
@@ -126,5 +135,4 @@ namespace Assets.Scripts.Enemies
                 yield return new WaitForSeconds(shootAnimationTime);
                 shooter.Fire();
         }
-    }
 }

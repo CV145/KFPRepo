@@ -12,6 +12,8 @@ using UnityEngine;
 [RequireComponent(typeof(Mover))]
 public class Crackhead : Enemy
 {
+    bool HasPlayedRun;
+
     public enum States
     {
         RUN
@@ -28,6 +30,16 @@ public class Crackhead : Enemy
         player = GameObject.FindGameObjectWithTag("Player").transform;
         flipper = GetComponent<Flipper>();
         mover = GetComponent<Mover>();
+
+        switch (Random.Range(0, 2))
+        {
+            case 0:
+                HasPlayedRun = false;
+                break;
+            case 1:
+                HasPlayedRun = true;
+                break;
+        }
     }
 
     private void Update()
@@ -35,6 +47,11 @@ public class Crackhead : Enemy
             switch (currentState)
             {
                 case States.RUN:
+                if (!HasPlayedRun)
+                {
+                    DialogHandler.PlayEnemyDialog(gameObject, "Dialog/Crackhead/crackhead running");
+                    HasPlayedRun = true;
+                }
                     Run();
                     break;
             }

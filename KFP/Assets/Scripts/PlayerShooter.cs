@@ -38,6 +38,21 @@ public class PlayerShooter : Shooter
 
             shotSound.Play();
 
+            switch (Random.Range(0, 10))
+            {
+                case 0:
+                    DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Attacking 1");
+                    break;
+
+                case 1:
+                    DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Attacking 2");
+                    break;
+
+                case 2:
+                    DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP attacking 3");
+                    break;
+            }
+
             if (hitInfo.transform != null)
             {
                 GameObject shotObject = hitInfo.transform.gameObject;

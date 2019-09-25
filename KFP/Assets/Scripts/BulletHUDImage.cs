@@ -25,7 +25,7 @@ public class BulletHUDImage : MonoBehaviour
     public void SetIsFlying()
     {
         isFlying = true;
-        StartCoroutine(Deactivate());
+        //StartCoroutine(Deactivate());
     }
 
     /// <summary>

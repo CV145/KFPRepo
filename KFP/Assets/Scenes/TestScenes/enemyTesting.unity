@@ -632,7 +632,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 603023825}
-  - component: {fileID: 603023827}
   - component: {fileID: 603023826}
   - component: {fileID: 603023828}
   - component: {fileID: 603023830}
@@ -677,18 +676,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &603023827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603023824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 018ab71266c787445819c79231b69c10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &603023828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,7 +732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &603852808
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,6 +1843,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f21102951a5164f98d0e1db7295961, type: 3}
+--- !u!223 &1226936493 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3597815827561458558, guid: f5f21102951a5164f98d0e1db7295961,
+    type: 3}
+  m_PrefabInstance: {fileID: 1226936492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1232585876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2178,9 +2171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d996ab08c7aae949b6f2382f1227682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCountText: {fileID: 0}
-  scoreCountText: {fileID: 0}
-  healthText: {fileID: 0}
   pauseButton: {fileID: 0}
   ActivePanel: {fileID: 0}
   StartPanel: {fileID: 0}
@@ -2913,6 +2903,12 @@ PrefabInstance:
       propertyPath: OnPushed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6619868487111150280, guid: 5925f05073c488d428af59c84ffc6938,
+        type: 3}
+      propertyPath: DeathObject
+      value: 
+      objectReference: {fileID: 1383794564387328411, guid: eff3e5bf80ead564c96bf4f2328901c4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5925f05073c488d428af59c84ffc6938, type: 3}
 --- !u!1001 &1258886190360073382
@@ -3081,5 +3077,10 @@ PrefabInstance:
       propertyPath: currentState
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 615466884050114993, guid: 00b1b845818b70c4394c472a4f23d20e,
+        type: 3}
+      propertyPath: UICanvas
+      value: 
+      objectReference: {fileID: 1226936493}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b1b845818b70c4394c472a4f23d20e, type: 3}

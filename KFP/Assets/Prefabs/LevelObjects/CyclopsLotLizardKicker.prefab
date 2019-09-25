@@ -9427,6 +9427,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   flashWhenHurt: 1
+  DeathObject: {fileID: 9120949541974110890, guid: 7867d343bb2f6a24982835a3b0ccad51,
+    type: 3}
 --- !u!95 &885794603
 Animator:
   serializedVersion: 3
@@ -9537,7 +9539,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  overrideReactionWhenShot: 0
+  ignoreReactionWhenShot: 0
   bloodSplashEmitter: {fileID: 691711166}
   bloodGushEmitter: {fileID: 597321382}
   health: {fileID: 885794604}

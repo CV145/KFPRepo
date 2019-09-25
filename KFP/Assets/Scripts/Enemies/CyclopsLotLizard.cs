@@ -61,8 +61,16 @@ public class CyclopsLotLizard : Enemy
         }
     }
 
+    int kicks;
+
     private void Kick()
     {
+        kicks++;
+        if (kicks >= 420)
+        {
+            DialogHandler.PlayEnemyDialog(gameObject, "Dialog/Lot Lizard/Third Eye/lot lizard third eye attacking 1");
+            kicks = 0;
+        }
         if (!AnimController.GetBool("doingBackflip"))
         {
             AnimController.SetBool("doingMelee", true);

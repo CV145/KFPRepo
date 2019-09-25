@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelButton : MonoBehaviour
 {
-    public int Level = 0;
+    public int Level;
     public string SceneName = "Level1";
     private void Start()
     {
@@ -24,5 +24,6 @@ public class LevelButton : MonoBehaviour
     public void LoadLevel()
     {
         SceneManager.LoadScene(SceneName);
+        LevelSystem.LevelDifficulty = Level;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelSystem : MonoBehaviour
 {
     public static List<int> UnlockedLevels = new List<int>();
+    public static int LevelDifficulty;
     private void Start()
     {
         SaveSystem.LoadGame();

@@ -248,6 +248,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   flashWhenHurt: 1
+  DeathObject: {fileID: 7588380570132462100, guid: 2b0084a22b25a3c4babf7b00ea70820d,
+    type: 3}
 --- !u!114 &6306937545653941026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +267,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  overrideReactionWhenShot: 0
+  ignoreReactionWhenShot: 0
   bloodSplashEmitter: {fileID: 5892118776852242699}
   bloodGushEmitter: {fileID: 1911603712352940262}
   health: {fileID: 6570918816967427664}
