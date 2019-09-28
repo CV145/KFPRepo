@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Powerups : MonoBehaviour
 {
+    //Camera Zoom Effect
+    public static CameraZoom CamZoom = new CameraZoom();
     //length of the powerup
     public static int SublimeBulletTimeLength = 5;
     //speed slowdown multiplier (base speed * this)
@@ -40,6 +42,7 @@ public class Powerups : MonoBehaviour
 
     public static void PlayPowerup(string name)
     {
+        CamZoom.DoZoom(P.gameObject);
         name = name.ToLower();
         if (name == "sublime bullet time")
         {

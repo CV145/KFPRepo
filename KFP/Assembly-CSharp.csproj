@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Bricktronic\AudioHandler\AudioHandler.cs" />
+    <Compile Include="Assets\Bricktronic\CameraZoom.cs" />
     <Compile Include="Assets\Bricktronic\CharacterParts\BodyPart.cs" />
     <Compile Include="Assets\Bricktronic\DialogHandler\DialogHandler.cs" />
     <Compile Include="Assets\Bricktronic\IntroScene\IntroScene.cs" />
@@ -68,9 +69,10 @@
     <Compile Include="Assets\Bricktronic\LevelSelector\LevelCheckpoint.cs" />
     <Compile Include="Assets\Bricktronic\LevelSelector\LevelSystem.cs" />
     <Compile Include="Assets\Bricktronic\LevelSelector\SaveSystem.cs" />
+    <Compile Include="Assets\Bricktronic\MainMenu\Logo.cs" />
     <Compile Include="Assets\Bricktronic\MainMenu\MenuButton.cs" />
     <Compile Include="Assets\Bricktronic\Powerups.cs" />
-    <Compile Include="Assets\EnemyStatusFX.cs" />
+    <Compile Include="Assets\Bricktronic\SpawnSystem.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
     <Compile Include="Assets\Materials\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
@@ -87,9 +89,8 @@
     <Compile Include="Assets\Materials\JMO Assets\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
     <Compile Include="Assets\Materials\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
     <Compile Include="Assets\Materials\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
-    <Compile Include="Assets\PowerupFX.cs" />
-    <Compile Include="Assets\Prefabs\LevelObjects\Events\ClickEvent.cs" />
-    <Compile Include="Assets\Prefabs\LevelObjects\Events\TriggerEvent.cs" />
+    <Compile Include="Assets\Resources\Prefabs\LevelObjects\Events\ClickEvent.cs" />
+    <Compile Include="Assets\Resources\Prefabs\LevelObjects\Events\TriggerEvent.cs" />
     <Compile Include="Assets\Scripts\AmmoUI.cs" />
     <Compile Include="Assets\Scripts\BackForthMover.cs" />
     <Compile Include="Assets\Scripts\Behaviors\MovementBehaviors.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\Scripts\Enemies\GlassesLotLizard.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyShotReceiver.cs" />
+    <Compile Include="Assets\Scripts\EnemyStatusFX.cs" />
     <Compile Include="Assets\Scripts\Events\CameraLookEvent.cs" />
     <Compile Include="Assets\Scripts\Events\DefeatEnemiesEvent.cs" />
     <Compile Include="Assets\Scripts\Events\EnableObjectsEvent.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="Assets\Scripts\Managers\GlitchEffectMaker.cs" />
     <Compile Include="Assets\Scripts\Managers\TheManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UiManager.cs" />
+    <Compile Include="Assets\Scripts\MenuSceneChanger.cs" />
     <Compile Include="Assets\Scripts\Movement\CharacterMovementState.cs" />
     <Compile Include="Assets\Scripts\Movement\EllipticalMover.cs" />
     <Compile Include="Assets\Scripts\Movement\EnemyMovementBehavior.cs" />
@@ -150,6 +153,7 @@
     <Compile Include="Assets\Scripts\PlayerCollider.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerShooter.cs" />
+    <Compile Include="Assets\Scripts\PowerupFX.cs" />
     <Compile Include="Assets\Scripts\ProjectileShooter.cs" />
     <Compile Include="Assets\Scripts\RadialProgressBar.cs" />
     <Compile Include="Assets\Scripts\RedFlasher.cs" />

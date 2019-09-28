@@ -78,7 +78,7 @@ public class BulletHUDImage : MonoBehaviour
             rotator.Reset();
         } else
         {
-            Debug.LogError("Rotator was null!");
+            //Debug.LogError("Rotator was null!");
         }
     }
 }

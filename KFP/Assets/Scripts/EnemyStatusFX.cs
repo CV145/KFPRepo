@@ -162,7 +162,7 @@ public class EnemyStatusFX : MonoBehaviour
         else
         {
             statusTimer -= Time.deltaTime;
-            print(statusTimer);
+            //print(statusTimer);
         }
     }
 }

@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
         mover = GetComponent<Mover>();
         flipper = GetComponent<Flipper>();
         shooter = GetComponent<PlayerShooter>();
+        SpawnSystem.SpawnEnemies(LevelSystem.LevelDifficulty,this.transform.position);
     }
 
     // Update is called once per frame
