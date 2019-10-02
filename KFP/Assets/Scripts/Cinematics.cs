@@ -13,6 +13,8 @@ public class Cinematics : MonoBehaviour
     [SerializeField] GameObject[] objectsToDisableWhilePlaying;
     Cinematic activeCinematic;
 
+    bool SpawnedCinematic;
+
     /// <summary>
     /// Plays a cinematic according to given name.
     /// </summary>
@@ -32,6 +34,13 @@ public class Cinematics : MonoBehaviour
     {
         activeCinematic.gameObject.SetActive(false);
         EnableObjects();
+
+        if (!SpawnedCinematic)
+        {
+            GameObject ZoomTrigger = Instantiate(Resources.Load("ZoomTrigger") as GameObject);
+            ZoomTrigger.transform.position = Player.PlayerObject.transform.position + new Vector3(5, 0);
+            SpawnedCinematic = true;
+        }
     }
 
     /// <summary>

@@ -21,7 +21,7 @@ public class LevelButton : MonoBehaviour
             return;
         }
 
-        if (LevelSystem.UnlockedLevels.Contains(Level))
+        if (LevelSystem.UnlockedLevels.Contains(Level) || Level == 1)
         {
             //level exists
             B.gameObject.AddComponent<Logo>();

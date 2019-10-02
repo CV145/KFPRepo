@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Bricktronic\AudioHandler\AudioHandler.cs" />
     <Compile Include="Assets\Bricktronic\CameraZoom.cs" />
+    <Compile Include="Assets\Bricktronic\CharacterMovement.cs" />
     <Compile Include="Assets\Bricktronic\CharacterParts\BodyPart.cs" />
+    <Compile Include="Assets\Bricktronic\CinematicZoom.cs" />
     <Compile Include="Assets\Bricktronic\DialogHandler\DialogHandler.cs" />
     <Compile Include="Assets\Bricktronic\IntroScene\IntroScene.cs" />
     <Compile Include="Assets\Bricktronic\LevelSelector\LevelButton.cs" />

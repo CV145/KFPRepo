@@ -21,11 +21,12 @@ public class EnemyHealth : Health
     private void Start()
     {
         flasher = GetComponent<RedFlasher>();
-        int HealthMultiplier = currentHealth * LevelSystem.LevelDifficulty;
-        if (HealthMultiplier < 1)
-            HealthMultiplier = 1;
 
-        currentHealth *= HealthMultiplier;
+        int HealthAdd = LevelSystem.LevelDifficulty;
+        if (HealthAdd > 4)
+            HealthAdd = 4;
+
+        currentHealth += HealthAdd;
     }
 
     /// <summary>

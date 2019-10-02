@@ -693,6 +693,9 @@ MonoBehaviour:
   currentState: 0
   moveSpeed: 0.1
   animator: {fileID: 1676043211}
+  flipper: {fileID: 0}
+  shooter: {fileID: 0}
+  JumpForce: 11
 --- !u!50 &191133507
 Rigidbody2D:
   serializedVersion: 4
@@ -779,8 +782,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f92c94e634d81b4e8492f6a79ecd0ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 99
-  maxHealth: 99
+  currentHealth: 4
+  maxHealth: 4
+  DeathObject: {fileID: 1384508693170079530, guid: 6182fe36fe1d968499a61094f529a30e,
+    type: 3}
+  UICanvas: {fileID: 0}
 --- !u!114 &802088970
 MonoBehaviour:
   m_ObjectHideFlags: 0

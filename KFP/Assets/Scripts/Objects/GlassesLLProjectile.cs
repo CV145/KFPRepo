@@ -29,6 +29,9 @@ namespace Assets.Scripts.Objects
 
         private void Start()
         {
+            if (!GameObject.FindGameObjectWithTag("Player"))
+                return;
+
             player = GameObject.FindGameObjectWithTag("Player").transform;
             mover = GetComponent<Mover>();
             flipper = GetComponent<Flipper>();
@@ -38,7 +41,7 @@ namespace Assets.Scripts.Objects
 
         private void Update()
         {
-            if (!isShot)
+            if (!isShot && mover && player)
             mover.MoveTo(player, chaseSpeed);
 
             else
@@ -69,6 +72,8 @@ namespace Assets.Scripts.Objects
                             mover.MoveDown(flyAwaySpeed);
                             break;
                     }
+
+                if(rotator)
                 rotator.Rotate(); 
             }
         }

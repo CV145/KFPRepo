@@ -15,11 +15,13 @@ public class MenuButton : MonoBehaviour
 
     public void NewGame()
     {
+        LevelSystem.LevelDifficulty = 1;
         SceneManager.LoadScene(newGameScene);
     }
 
     public void Testing()
     {
+        LevelSystem.LevelDifficulty = 5;
         SceneManager.LoadScene(testScene);
     }
 }

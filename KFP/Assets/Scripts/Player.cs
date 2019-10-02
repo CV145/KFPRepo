@@ -24,10 +24,18 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] Animator animator;
     Mover mover;
-    Flipper flipper;
+    public Flipper flipper;
     public PlayerShooter shooter;
     Vector2 mousePos;
     bool isReloading;
+
+    bool CanJump = true;
+
+    public float JumpForce = 11;
+
+    float StartY;
+
+    public static GameObject PlayerObject;
 
     /// <summary>
     /// The current state of the player. Either RUN or SHOOT.
@@ -54,10 +62,32 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerObject = gameObject;
         mover = GetComponent<Mover>();
         flipper = GetComponent<Flipper>();
         shooter = GetComponent<PlayerShooter>();
-        SpawnSystem.SpawnEnemies(LevelSystem.LevelDifficulty,this.transform.position);
+        SpawnSystem.SpawnEnemies(LevelSystem.LevelDifficulty,transform.position);
+        SetState("SHOOT");
+
+        StartY = transform.position.y;
+
+        //Jump();
+    }
+
+    public void Jump()
+    {
+        if (!CanJump)
+            return;
+
+        CanJump = false;
+        this.GetComponent<Rigidbody2D>().velocity += new Vector2(0,JumpForce);
+        StartCoroutine(JumpTimeout());
+    }
+
+    public IEnumerator JumpTimeout()
+    {
+        yield return new WaitForSeconds(5);
+        CanJump = true;
     }
 
     // Update is called once per frame
@@ -94,11 +124,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Flip()
+    {
+        flipper.Flip();
+    }
+
     private void CheckShot()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && !isReloading)
+        if (Input.GetMouseButtonUp(0) && !isReloading)
         {
             if (shooter.CurrentAmmo > 0)
                 animator.SetTrigger("fireTrigger");

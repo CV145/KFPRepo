@@ -92,6 +92,9 @@ public class Mover : MonoBehaviour
     /// <param name="targetPos"></param>
     public void MoveTo(Transform targetPos, float moveSpeed)
     {
+        if (!targetPos)
+            return;
+
         if (gameIsPaused)
         {
             moveSpeed *= 0;

@@ -12,7 +12,7 @@ public class CameraFocuser : MonoBehaviour
     [SerializeField] private bool applyOffset;
     GameObject player;
     public bool ApplyOffset { set { applyOffset = value; } }
-    public bool FollowTarget { set { followTarget = value; } }
+    public static bool FollowTarget;
 
     private void Start()
     {

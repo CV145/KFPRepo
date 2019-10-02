@@ -29,6 +29,9 @@ public class PlayerShooter : Shooter
     /// <param name="targetShotPos"></param>
     public void Shoot(Vector2 targetShotPos)
     {
+        if (CharacterMovement.Swiped)
+            return;
+
         if (currentAmmo > 0)
         {
             shotEffect.transform.position = targetShotPos;
@@ -56,6 +59,7 @@ public class PlayerShooter : Shooter
             if (hitInfo.transform != null)
             {
                 GameObject shotObject = hitInfo.transform.gameObject;
+                if (shotObject != null && shotObject.GetComponent<ShotReceiver>())
                 shotObject.GetComponent<ShotReceiver>().ReceiveShot();
 
                 try

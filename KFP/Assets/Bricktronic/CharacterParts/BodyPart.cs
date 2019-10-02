@@ -27,7 +27,7 @@ public class BodyPart : MonoBehaviour
             gameObject.AddComponent<Rigidbody2D>();
             gameObject.GetComponent<BodyPart>().AddForce(StartingForce);
         }
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, Random.Range(5,10));
     }
 
     public void AddForce(Vector2 Vel)

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Extension of Health component. PlayerHealth plays a camera glitch when reduced.
@@ -12,6 +13,7 @@ public class PlayerHealth : Health
 {
     GlitchEffectMaker glitchEffectMaker;
 
+    public GameObject DeathObject;
     public Canvas UICanvas;
 
     bool IsDead;
@@ -45,8 +47,15 @@ public class PlayerHealth : Health
         {
             if (!IsDead)
             {
-                Instantiate(Resources.Load("YouSuck"), UICanvas.transform.parent);
+                GameObject GO = Instantiate(Resources.Load("YouSuck") as GameObject, UICanvas.transform.position, Quaternion.identity, UICanvas.transform);
+                //GO.transform.SetParent(UICanvas.transform);
                 IsDead = true;
+
+                GameObject DeathBody = Instantiate(DeathObject, transform.position, Quaternion.identity);
+                Camera.main.GetComponent<CameraFocuser>().enabled = false;
+                gameObject.transform.position = Vector3.down * 10;
+                Mover.gameIsPaused = true;
+                StartCoroutine(DeathDelay());
             }
             currentHealth = 0;
         }
@@ -61,6 +70,13 @@ public class PlayerHealth : Health
                 DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Getting hit 2");
                 break;
         }
+    }
+
+    public IEnumerator DeathDelay()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("LevelSelector");
+        Mover.gameIsPaused = false;
     }
 
     /// <summary>
