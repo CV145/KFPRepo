@@ -1,2 +1,2 @@
 # KFPRepo
-Unity version: 2018.3.5
+Unity version: 2019.2.0f1
