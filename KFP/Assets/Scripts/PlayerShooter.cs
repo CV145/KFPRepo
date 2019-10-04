@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Component that handles player shooting. 
@@ -38,29 +39,14 @@ public class PlayerShooter : Shooter
             particles.Play();
             Ray2D shootRay = new Ray2D(targetShotPos, targetShotPos);
             RaycastHit2D hitInfo = Physics2D.Raycast(shootRay.origin, shootRay.direction, 0.1f, shootRaycastMask);
-
-            shotSound.Play();
-
-            switch (Random.Range(0, 10))
-            {
-                case 0:
-                    DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Attacking 1");
-                    break;
-
-                case 1:
-                    DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Attacking 2");
-                    break;
-
-                case 2:
-                    DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP attacking 3");
-                    break;
-            }
+            
 
             if (hitInfo.transform != null)
             {
+
                 GameObject shotObject = hitInfo.transform.gameObject;
                 if (shotObject != null && shotObject.GetComponent<ShotReceiver>())
-                shotObject.GetComponent<ShotReceiver>().ReceiveShot();
+                    shotObject.GetComponent<ShotReceiver>().ReceiveShot();
 
                 try
                 {
@@ -77,10 +63,14 @@ public class PlayerShooter : Shooter
             }
 
             currentAmmo--;
+            shotSound.Play();
+            PlayVoiceFX();
+
             if (ammoUI != null)
             {
                 ammoUI.ReleaseBullet();
-            } else
+            }
+            else
             {
                 Debug.LogError("ammoUI was null!");
             }
@@ -89,6 +79,24 @@ public class PlayerShooter : Shooter
         {
             emptySound.Play();
             print("No ammo!");
+        }
+    }
+
+    private void PlayVoiceFX()
+    {
+        switch (Random.Range(0, 10))
+        {
+            case 0:
+                DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Attacking 1");
+                break;
+
+            case 1:
+                DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP Attacking 2");
+                break;
+
+            case 2:
+                DialogHandler.PlayKFPDialog(gameObject, "Dialog/KFP/KFP attacking 3");
+                break;
         }
     }
 

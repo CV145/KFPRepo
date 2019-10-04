@@ -38,7 +38,8 @@ public class BulletHUDImage : MonoBehaviour
 
     private void Start()
     {
-        initialPosition = this.transform.localPosition;
+        //initialPosition = this.transform.localPosition;
+        //initialPosition = this.transform.position; //world space
         mover = GetComponent<Mover>();
         rotator = GetComponent<Rotator>();
     }

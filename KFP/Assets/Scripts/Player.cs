@@ -131,9 +131,11 @@ public class Player : MonoBehaviour
 
     private void CheckShot()
     {
+        if (PlayerShotBlocker.stopShooting)
+            return;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonUp(0) && !isReloading)
+        if (Input.GetMouseButtonDown(0) && !isReloading)
         {
             if (shooter.CurrentAmmo > 0)
                 animator.SetTrigger("fireTrigger");
@@ -146,7 +148,8 @@ public class Player : MonoBehaviour
             {
                 flipper.Flip();
             }
-            shooter.Shoot(mousePos);
+
+            shooter.Shoot(mousePos); //dont call when clicking on a UI button...
         }
         else
         {
