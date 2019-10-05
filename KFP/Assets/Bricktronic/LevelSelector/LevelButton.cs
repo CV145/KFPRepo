@@ -7,11 +7,13 @@ using UnityEngine.SceneManagement;
 public class LevelButton : MonoBehaviour
 {
     public int Level;
-    public string SceneName = "Level1";
+    public string newCurrentLevel;
     public Sprite UnlockedImage;
     public Sprite LockedImage;
     public bool IsBackArrow;
     Button B;
+    [SerializeField] bool loadDonutShop;
+
     private void Start()
     {
         B = GetComponent<Button>();
@@ -69,6 +71,14 @@ public class LevelButton : MonoBehaviour
     public void LoadLevel()
     {
         LevelSystem.LevelDifficulty = Level;
-        SceneManager.LoadScene(SceneName);
+        LevelSystem.currentLevel = newCurrentLevel;
+        if (loadDonutShop)
+        {
+            SceneManager.LoadScene("DonutShop");
+        }
+        else
+        {
+            SceneManager.LoadScene(newCurrentLevel);
+        }
     }
 }

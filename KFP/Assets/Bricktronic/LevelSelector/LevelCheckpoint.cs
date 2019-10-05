@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelCheckpoint : MonoBehaviour
 {
-    public int Level = 0;
+    public int newLevelToUnlock = 0;
     public static bool InitializedSave = false;
     public static List<GameObject> Checkpoints = new List<GameObject>();
 
@@ -21,14 +21,14 @@ public class LevelCheckpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!LevelSystem.UnlockedLevels.Contains(Level))
+        if (!LevelSystem.UnlockedLevels.Contains(newLevelToUnlock))
         {
-            Debug.Log("Saving checkpoint: " + Level);
-            LevelSystem.UnlockedLevels.Add(Level);
+            Debug.Log("Saving checkpoint: " + newLevelToUnlock);
+            LevelSystem.UnlockedLevels.Add(newLevelToUnlock);
             SaveSystem.SaveGame();
         } else
         {
-            Debug.Log("Checkpoint: " + Level + " already obtained");
+            Debug.Log("Checkpoint: " + newLevelToUnlock + " already obtained");
         }
     }
 }

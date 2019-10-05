@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level1.unity
     guid: 5294560742c3be841ad27f42fe8cf097
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/TestScenes/SampleScene.unity
     guid: 5fc689a94d1c9934d95dad814af33437
   - enabled: 0
     path: Assets/Scenes/TestScenes/eventTesting.unity
@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level2.unity
     guid: f2e27eae598756c4f8d7b2c78b83d544
+  - enabled: 1
+    path: Assets/Scenes/Levels/DonutShop.unity
+    guid: 6b1c83569f9550d4da75ac5ef8bd68fd
   m_configObjects: {}

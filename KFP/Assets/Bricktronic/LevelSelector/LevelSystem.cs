@@ -7,6 +7,8 @@ public class LevelSystem : MonoBehaviour
 {
     public static List<int> UnlockedLevels = new List<int>();
     public static int LevelDifficulty;
+    public static string currentLevel;
+
     private void Start()
     {
         SaveSystem.LoadGame();

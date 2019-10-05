@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     bool CanJump = true;
 
     public float JumpForce = 11;
+    bool allowEnemySpawning;
 
     float StartY;
 

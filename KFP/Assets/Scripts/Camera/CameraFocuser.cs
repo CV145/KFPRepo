@@ -14,9 +14,18 @@ public class CameraFocuser : MonoBehaviour
     public bool ApplyOffset { set { applyOffset = value; } }
     public static bool FollowTarget;
 
+    public void SetApplyOffset(bool value)
+    {
+        applyOffset = value;
+    }
+    public void SetFollowTarget(bool value)
+    {
+        followTarget = value;
+    }
+
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); //not good if more than one player may need to change
+        player = GameObject.FindGameObjectWithTag("Player"); 
     }
 
     private void LateUpdate()
