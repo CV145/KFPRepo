@@ -21,14 +21,18 @@ public class LevelCheckpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!LevelSystem.UnlockedLevels.Contains(newLevelToUnlock))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Saving checkpoint: " + newLevelToUnlock);
-            LevelSystem.UnlockedLevels.Add(newLevelToUnlock);
-            SaveSystem.SaveGame();
-        } else
-        {
-            Debug.Log("Checkpoint: " + newLevelToUnlock + " already obtained");
-        }
+            if (!LevelSystem.UnlockedLevels.Contains(newLevelToUnlock))
+            {
+                Debug.Log("Saving checkpoint: " + newLevelToUnlock);
+                LevelSystem.UnlockedLevels.Add(newLevelToUnlock);
+                SaveSystem.SaveGame();
+            }
+            else
+            {
+                Debug.Log("Checkpoint: " + newLevelToUnlock + " already obtained");
+            }
+        } 
     }
 }

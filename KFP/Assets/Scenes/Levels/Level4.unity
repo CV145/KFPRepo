@@ -207,11 +207,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -4.23
       objectReference: {fileID: 0}
-    - target: {fileID: 6264407095078404637, guid: e7dc649dd66de2444b8fc3c34b392f2d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1724100121127638063, guid: e7dc649dd66de2444b8fc3c34b392f2d,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -231,6 +226,16 @@ PrefabInstance:
         type: 3}
       propertyPath: newCurrentLevel
       value: Level5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785374994061625276, guid: e7dc649dd66de2444b8fc3c34b392f2d,
+        type: 3}
+      propertyPath: newLevelToUnlock
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6264407095078404637, guid: e7dc649dd66de2444b8fc3c34b392f2d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7dc649dd66de2444b8fc3c34b392f2d, type: 3}
