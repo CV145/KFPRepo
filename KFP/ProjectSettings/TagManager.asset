@@ -8,6 +8,7 @@ TagManager:
   - BreakableObject
   - FxTemporaire
   - Peso
+  - UI
   layers:
   - Default
   - TransparentFX
