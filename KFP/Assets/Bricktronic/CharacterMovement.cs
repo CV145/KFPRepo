@@ -16,6 +16,28 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
 
+        //PC controls
+        if (Input.GetKey(KeyCode.W))
+        {
+            OnSwipeUp();
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            OnSwipeDown();
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            OnSwipeLeft();
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            OnSwipeRight();
+        }
+        //PC controls end
+
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)

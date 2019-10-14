@@ -6,7 +6,8 @@ public class BodyPart : MonoBehaviour
 {
     public bool IsContainer;
     public Vector2 StartingScale = Vector2.one;
-    Vector2 StartingForce;
+    Vector3 StartingForce;
+    bool RotateDirection;
     private void Start()
     {
         if (IsContainer)
@@ -17,22 +18,31 @@ public class BodyPart : MonoBehaviour
                 if (T != this.transform)
                 {
                     T.gameObject.AddComponent<BodyPart>();
-                    T.gameObject.GetComponent<BodyPart>().StartingForce = (this.transform.position - T.position)*5000;
+                    T.gameObject.GetComponent<BodyPart>().StartingForce = (Player.PlayerObject.transform.position - T.position) * 0.001f;
+                    T.gameObject.GetComponent<BodyPart>().StartingForce += (this.transform.position - T.position)*0.01f;
+
+                    if(Random.Range(0, 2) == 1)
+                    {
+                            T.gameObject.GetComponent<BodyPart>().RotateDirection = true;
+                    }
                 }
             }
         }
-        else
-        {
-            gameObject.AddComponent<PolygonCollider2D>();
-            gameObject.AddComponent<Rigidbody2D>();
-            gameObject.GetComponent<BodyPart>().AddForce(StartingForce);
-        }
-        Destroy(this.gameObject, Random.Range(5,10));
     }
 
-    public void AddForce(Vector2 Vel)
+    private void Update()
     {
-        if(Vel.magnitude>0)
-        this.GetComponent<Rigidbody2D>().AddForce(Vel);
+        transform.position -= new Vector3(StartingForce.x,StartingForce.y);
+
+        if (RotateDirection)
+        {
+            transform.Rotate(new Vector3(0, 0, StartingForce.magnitude * 100));
+        } else
+        {
+            transform.Rotate(new Vector3(0, 0, -StartingForce.magnitude * 100));
+        }
+
+        if(StartingForce.magnitude>0.2f)
+        StartingForce *= 0.99f;
     }
 }

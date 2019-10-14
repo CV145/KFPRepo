@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-
+using System.Runtime.Serialization;
 
 [System.Serializable]
 public class SaveSystem : MonoBehaviour
 {
-
     public static void SaveGame()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/SaveGame.KFP");
-        bf.Serialize(file, LevelSystem.UnlockedLevels);
+
+        SaveData SD = new SaveData()
+        {
+            Levels = LevelSystem.UnlockedLevels,
+            Pesos = PesoSystem.Pesos,
+        };
+
+        bf.Serialize(file, SD);
         file.Close();
     }
 
@@ -26,7 +32,16 @@ public class SaveSystem : MonoBehaviour
         }
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/SaveGame.KFP", FileMode.Open);
-        LevelSystem.UnlockedLevels = (List<int>)bf.Deserialize(file);
+        SaveData SD = (SaveData)bf.Deserialize(file);
+        LevelSystem.UnlockedLevels = SD.Levels;
+        PesoSystem.Pesos = SD.Pesos;
         file.Close();
     }
+}
+
+[System.Serializable]
+public struct SaveData
+{
+    public List<int> Levels;
+    public int Pesos;
 }

@@ -21,6 +21,11 @@ public class PlayerHealth : Health
     private void Start()
     {
         glitchEffectMaker = GetComponent<GlitchEffectMaker>();
+
+        if (!this.GetComponent<HealthBar>())
+        {
+            this.gameObject.AddComponent<HealthBar>();
+        }
     }
 
     /// <summary>

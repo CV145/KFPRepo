@@ -66,6 +66,15 @@ public class EnemyHealth : Health
         if (HasDied)
             return;
 
+        if(Random.Range(0,5) == 4)
+        {
+            if (gameObject != null)
+            {
+                GameObject Peso = Instantiate(Resources.Load("Peso") as GameObject);
+                Peso.transform.position = this.transform.position;
+            }
+        }
+
         if (DeathObject != null)
         {
             Instantiate(DeathObject,this.transform.position,this.transform.rotation);

@@ -5,20 +5,15 @@ using UnityEngine;
 public class CrossPopUp : MonoBehaviour
 {
     public GameObject popup;
-    void Start()
+
+    private void OnMouseDown()
     {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    private void OnMouseDown ()
-    {
-
-        popup.SetActive(true);
-
+        if (!popup.activeSelf)
+        {
+            popup.SetActive(true);
+        } else
+        {
+            popup.SetActive(false);
+        }
     }
 }

@@ -30,6 +30,12 @@ public class Peso : MonoBehaviour
         {
             mover.MoveTo(player, moveSpeed);
         }
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 0.1f)
+        {
+            PesoSystem.Pesos += 1;
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>

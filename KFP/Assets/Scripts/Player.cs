@@ -158,6 +158,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Peso>() != null)
+        {
+            PesoSystem.Pesos += 1;
+        }
+    }
+
     private void OnMouseDown()
     {
         isReloading = true;
